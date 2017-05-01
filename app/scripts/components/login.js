@@ -1,21 +1,34 @@
 import React from "react";
+import { connect } from "react-redux";
+import container from "../containers/all.js";
+import userLogin from "../actions/login_action.js";
 
 class Login extends React.Component {
   constructor(props) {
     super(props);
+
+    this.loginUser = this.loginUser.bind(this);
   }
+
+  loginUser(e) {
+    e.preventDefault();
+    let email = this.refs.email.value;
+    let pw = this.refs.pw.value;
+    this.props.dispatch(userLogin(email, pw));
+  }
+
   render() {
     return (
       <div className="card login-card">
         <div className="row">
-          <form onSubmit={"action"}>
+          <form onSubmit={this.loginUser}>
             <div className="input-field col s6 m6 l6">
               <label htmlFor="email">Email</label>
-              <input type="text" />
+              <input ref="email" type="text" />
             </div>
             <div className="input-field col s6 m6 l6">
               <label htmlFor="password">Password</label>
-              <input type="password" />
+              <input ref="pw" type="password" />
             </div>
             <div className="login-btn-div">
               <button className="btn login-btn" type="submit">Submit</button>
@@ -26,4 +39,5 @@ class Login extends React.Component {
     );
   }
 }
-export default Login;
+// export default Login;
+export default connect(container.allState)(Login);

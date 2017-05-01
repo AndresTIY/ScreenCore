@@ -1,6 +1,7 @@
 import api from "../api.js";
 
 export default function userLogin(email, pw) {
+  console.log("userLogin function gonna run");
   return function(dispatch) {
     return $.ajax({
       url: api.url + "/users/login",
