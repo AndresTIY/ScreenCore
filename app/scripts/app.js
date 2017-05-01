@@ -4,9 +4,9 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { render } from "react-dom";
 import { Provider } from "react-redux";
 import AppRoot from "./components/app_root.js";
-
 import NavBar from "./components/nav-bar.js";
 import Login from "./components/login.js";
+import Register from "./components/register.js";
 
 // const Nav = () => (
 //   <nav>
@@ -24,6 +24,7 @@ export default function app() {
           <Route path="/navbar" component={NavBar} />
           <Route exact path="/" component={AppRoot} />
           <Route exact path="/login" component={Login} />
+          <Route exact path="/register" component={Register} />
 
         </div>
       </Router>
