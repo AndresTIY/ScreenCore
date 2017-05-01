@@ -8,7 +8,7 @@ class NavBar extends React.Component {
     return (
       <nav>
         <div className="nav-wrapper">
-          <h3 className="brand-logo center">Screen-Core</h3>
+          <h3 className="brand-logo center"><Link to="/">Screen-Core</Link></h3>
           <ul id="nav-mobile" className="left">
             <li><Link to="/login">Login</Link></li>
             <li><Link to="/register">Register</Link></li>

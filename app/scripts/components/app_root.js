@@ -8,7 +8,6 @@ class AppRoot extends React.Component {
   render() {
     return (
       <main>
-        <NavBar />
         <HomePage />
       </main>
     );

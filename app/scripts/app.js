@@ -6,6 +6,7 @@ import { Provider } from "react-redux";
 import AppRoot from "./components/app_root.js";
 
 import NavBar from "./components/nav-bar.js";
+import Login from "./components/login.js";
 
 // const Nav = () => (
 //   <nav>
@@ -19,9 +20,10 @@ export default function app() {
     <Provider store={store}>
       <Router>
         <div>
-
+          <NavBar />
+          <Route path="/navbar" component={NavBar} />
           <Route exact path="/" component={AppRoot} />
-          <Route exact path="/navbar" component={NavBar} />
+          <Route exact path="/login" component={Login} />
 
         </div>
       </Router>
@@ -29,3 +31,4 @@ export default function app() {
     document.getElementById("app")
   );
 }
+//how to keep nav bar on screen at all times?
