@@ -8,19 +8,24 @@ class MovieCards extends React.Component {
       return (
         <div className="row">
           {this.props.movies.map((data, i) => {
+            var movieImage =
+              "http://berg-group.com/wp-content/uploads/2014/11/Photo_not_available-4.jpg";
+            if (data.poster_path !== null) {
+              movieImage = urlPath + data.poster_path;
+            }
             return (
-              <div key={i} className="col s1 m4 l4">
+              <div key={i} className="col s12 m4 l4">
                 <div className="card">
                   <div className="card-image">
-                    <img src={urlPath + data.poster_path} />
+                    <img src={movieImage} />
                   </div>
                   <div className="card-content">
-                    <p>
-                      {data.title}
-                    </p>
+                    <p>{data.title}</p>
+                    <p>Release Data: {data.release_date}</p>
+                    <p>Review Average: {data.vote_average}</p>
                   </div>
                   <div className="card-action">
-                    <a href="#">This is a link</a>
+                    <a href="#">Talk About It</a>
                   </div>
                 </div>
               </div>
