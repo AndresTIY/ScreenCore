@@ -5,7 +5,7 @@ export default function loadMovies() {
       url: `${api.mdbUrl}${api.dateRange}${api.mdbApiKey}`,
       method: "GET"
     }).then(function(data, success, xhr) {
-      dispatch({ type: "LOAD_NEW_MOVIES", data: data });
+      dispatch({ type: "LOAD_NEW_MOVIES", data: data.results });
     });
   };
 }
