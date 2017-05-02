@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import container from "../containers/all.js";
 import loadMovies from "../actions/load_movies.js";
 import MovieCards from "./h_moviecards.js";
+import FeaturedMovie from "./h_featured.js";
 
 class HomePage extends React.Component {
   constructor(props) {
@@ -12,7 +13,12 @@ class HomePage extends React.Component {
     this.props.dispatch(loadMovies());
   }
   render() {
-    return <MovieCards movies={this.props.movies} />;
+    return (
+      <div>
+        <FeaturedMovie movie={this.props.movies} />
+        <MovieCards movies={this.props.movies} />
+      </div>
+    );
   }
 }
 

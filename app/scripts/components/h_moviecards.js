@@ -34,7 +34,7 @@ class MovieCards extends React.Component {
         </div>
       );
     } else {
-      return <div>nothing</div>;
+      return <div>Loading... </div>;
     }
   }
 }
