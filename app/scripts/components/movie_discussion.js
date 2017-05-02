@@ -1,7 +1,11 @@
 import React from "react";
+import { connect } from "react-redux";
+import container from "../containers/all.js";
 
 class MovieDiscuss extends React.Component {
   render() {
+    let paramId = this.props.match.params.id;
+    console.log(paramId);
     return (
       <div>
         <form>
@@ -14,4 +18,4 @@ class MovieDiscuss extends React.Component {
   }
 }
 
-export default MovieDiscuss;
+export default connect(container.allState)(MovieDiscuss);

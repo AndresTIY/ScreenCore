@@ -2,7 +2,6 @@ import React from "react";
 import { connect } from "react-redux";
 import container from "../containers/all.js";
 import loadMovies from "../actions/load_movies.js";
-import MovieDiscuss from "./d_movie.js";
 import MovieLinks from "./d_movie_links.js";
 
 class Discussion extends React.Component {

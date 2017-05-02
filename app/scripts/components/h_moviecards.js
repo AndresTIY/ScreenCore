@@ -27,7 +27,7 @@ class MovieCards extends React.Component {
                     <p>Review Average: {data.vote_average}</p>
                   </div>
                   <div className="card-action">
-                    <a href="#">Talk About It</a>
+                    <a href={"/discussion/" + data.id}>Talk About It</a>
                   </div>
                 </div>
               </div>

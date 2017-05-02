@@ -1,4 +1,5 @@
 import React from "react";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 class MovieLinks extends React.Component {
   render() {
@@ -7,7 +8,9 @@ class MovieLinks extends React.Component {
         {this.props.movies.map((movie, i) => {
           return (
             <div key={i} className="movie-titles">
-              <p>{movie.title}</p>
+              <p>
+                <Link to={"/discussion/" + movie.id}>{movie.title}</Link>
+              </p>
             </div>
           );
         })}

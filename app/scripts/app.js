@@ -9,7 +9,7 @@ import Login from "./components/login.js";
 import Register from "./components/register.js";
 import Profile from "./components/profile.js";
 import Discussion from "./components/discussion.js";
-import MovieDiscuss from "./components/d_movie.js";
+import MovieDiscuss from "./components/movie_discussion.js";
 
 export default function app() {
   render(
