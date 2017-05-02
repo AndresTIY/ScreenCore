@@ -19,7 +19,9 @@ class MovieDiscussCard extends React.Component {
             <div className="card-stacked">
               <div className="card-content ">
                 <p>{movie.title}</p>
-                <p>Release Date: {movie.release_date}</p>
+                <p>
+                  Release Date: {moment(movie.release_date).format("M/DD/YYYY")}
+                </p>
                 <p>Review Average: {movie.vote_average}</p>
                 <p>Description: {movie.overview}</p>
               </div>

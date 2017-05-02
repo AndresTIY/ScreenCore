@@ -25,7 +25,12 @@ class FeaturedMovie extends React.Component {
               <div className="card-stacked">
                 <div className="card-content ">
                   <p>{mostPopular.title}</p>
-                  <p>Release Date: {mostPopular.release_date}</p>
+                  <p>
+                    Release Date:
+                    {" "}
+                    {moment(mostPopular.release_date).format("M/DD/YYYY")}
+                  </p>
+
                   <p>Review Average: {mostPopular.vote_average}</p>
                   <p>Description: {mostPopular.overview}</p>
                 </div>

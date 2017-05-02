@@ -23,7 +23,11 @@ class MovieCards extends React.Component {
                   </div>
                   <div className="card-content">
                     <p className="truncate">{data.title}</p>
-                    <p>Release Date: {data.release_date}</p>
+                    <p>
+                      Release Date:
+                      {" "}
+                      {moment(data.release_date).format("M/DD/YYYY")}
+                    </p>
                     <p>Review Average: {data.vote_average}</p>
                   </div>
                   <div className="card-action">
