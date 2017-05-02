@@ -30,7 +30,7 @@ class FeaturedMovie extends React.Component {
                   <p>Description: {mostPopular.overview}</p>
                 </div>
                 <div className="card-action">
-                  <a href="#">Link</a>
+                  <a href="#">Talk about it</a>
                 </div>
               </div>
             </div>
