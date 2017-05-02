@@ -1,7 +1,8 @@
 export default function AppReducer(state, action) {
   if (state === undefined) {
     return {
-      movies: null
+      movies: null,
+      userInfo: null
     };
   }
 

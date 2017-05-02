@@ -8,13 +8,6 @@ import NavBar from "./components/nav-bar.js";
 import Login from "./components/login.js";
 import Register from "./components/register.js";
 
-// const Nav = () => (
-//   <nav>
-//     <li><Link to="/about">About</Link></li>
-//     <li><Link to="/contact-us">Contact</Link></li>
-//   </nav>
-// );
-
 export default function app() {
   render(
     <Provider store={store}>
@@ -32,4 +25,3 @@ export default function app() {
     document.getElementById("app")
   );
 }
-//how to keep nav bar on screen at all times?

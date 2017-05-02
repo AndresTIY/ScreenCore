@@ -14,14 +14,14 @@ class MovieCards extends React.Component {
               movieImage = urlPath + data.poster_path;
             }
             return (
-              <div key={i} className="col s12 m4 l4">
+              <div key={i} className="col s12 m4 l3">
                 <div className="card">
                   <div className="card-image">
                     <img src={movieImage} />
                   </div>
                   <div className="card-content">
                     <p>{data.title}</p>
-                    <p>Release Data: {data.release_date}</p>
+                    <p>Release Date: {data.release_date}</p>
                     <p>Review Average: {data.vote_average}</p>
                   </div>
                   <div className="card-action">
