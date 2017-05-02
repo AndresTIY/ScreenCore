@@ -14,7 +14,7 @@ class Login extends React.Component {
     e.preventDefault();
     let email = this.refs.email.value;
     let pw = this.refs.pw.value;
-    this.props.dispatch(userLogin(email, pw));
+    this.props.dispatch(userLogin(email, pw, this.props.history));
   }
 
   render() {

@@ -1,6 +1,6 @@
 import api from "../api.js";
 
-export default function userLogin(email, pw) {
+export default function userLogin(email, pw, history) {
   console.log("userLogin function gonna run");
   return function(dispatch) {
     return $.ajax({
@@ -19,6 +19,7 @@ export default function userLogin(email, pw) {
       })
     }).then(data => {
       dispatch({ type: "USER_LOGGED_IN", data: data });
+      history.push("/");
     });
   };
 }

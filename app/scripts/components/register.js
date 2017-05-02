@@ -16,7 +16,9 @@ class Register extends React.Component {
     let pw = this.refs.pw.value;
     let name = this.refs.name.value;
     let username = this.refs.username.value;
-    this.props.dispatch(registerUser(name, username, email, pw));
+    this.props.dispatch(
+      registerUser(name, username, email, pw, this.props.history)
+    );
   }
 
   render() {
