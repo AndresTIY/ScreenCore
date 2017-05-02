@@ -22,7 +22,7 @@ class MovieCards extends React.Component {
                     <img src={movieImage} />
                   </div>
                   <div className="card-content">
-                    <p>{data.title}</p>
+                    <p className="truncate">{data.title}</p>
                     <p>Release Date: {data.release_date}</p>
                     <p>Review Average: {data.vote_average}</p>
                   </div>
@@ -41,20 +41,3 @@ class MovieCards extends React.Component {
   }
 }
 export default MovieCards;
-
-// this.props.movies.results.title
-// <div className="row">
-//   <div className="col s1 m4 l4">
-//     <div className="card">
-//       <div className="card-content">
-//         <p>
-//           I am a very simple card. I am good at containing small bits of information.
-//           I am convenient because I require little markup to use effectively.
-//         </p>
-//       </div>
-//       <div className="card-action">
-//         <a href="#">This is a link</a>
-//       </div>
-//     </div>
-//   </div>
-// </div>

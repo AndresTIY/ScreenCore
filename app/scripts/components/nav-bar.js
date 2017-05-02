@@ -4,8 +4,12 @@ import React from "react";
 import NavOgLeft from "./nav_og_left.js";
 import NavUser from "./nav_user.js";
 import container from "../containers/all.js";
+import loadMovies from "../actions/load_movies.js";
 
 class NavBar extends React.Component {
+  componentDidMount() {
+    this.props.dispatch(loadMovies());
+  }
   render() {
     let hideClass = "hide";
     let showClass = "show";
