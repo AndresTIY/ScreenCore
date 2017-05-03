@@ -2,8 +2,13 @@ import React from "react";
 import { connect } from "react-redux";
 import container from "../containers/all.js";
 import MovieDiscussCard from "./m_card.js";
+import createTopic from "../actions/create_topic.js";
+import loadTopics from "../actions/load_topics.js";
 
 class MovieDiscuss extends React.Component {
+  componentWillMount() {
+    this.props.dispatch(loadTopics());
+  }
   render() {
     let movieList = this.props.movies;
     let paramId = this.props.match.params.id;
@@ -15,11 +20,14 @@ class MovieDiscuss extends React.Component {
       return (
         <div>
           <MovieDiscussCard movie={currentMovie} />
-          <form>
-            <h3>Discuss {currentMovie.title}!</h3>
-            <input placeholder="new thread" />
-            <button>Start New Thread</button>
-          </form>
+          <h3>Discuss {currentMovie.title}!</h3>
+          <ul>
+            <li>Topic 1 created by (User) on (Date)</li>
+            <li>Topic 2 created by (User) on (Date)</li>
+            <li>Topic 3 created by (User) on (Date)</li>
+            <li>Topic 4 created by (User) on (Date)</li>
+          </ul>
+
         </div>
       );
     } else {
@@ -28,3 +36,7 @@ class MovieDiscuss extends React.Component {
   }
 }
 export default connect(container.allState)(MovieDiscuss);
+// <form>
+//   <input ref="message" placeholder="new thread" />
+//   <button>Start New Thread</button>
+// </form>

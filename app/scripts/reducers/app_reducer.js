@@ -2,7 +2,8 @@ export default function AppReducer(state, action) {
   if (state === undefined) {
     return {
       movies: null,
-      userInfo: null
+      userInfo: null,
+      topics: null
     };
   }
 
@@ -18,6 +19,13 @@ export default function AppReducer(state, action) {
 
     case "LOAD_NEW_MOVIES":
       return Object.assign({}, state, { movies: action.data });
+
+    case "LOAD_TOPICS":
+      return Object.assign({}, state, {
+        topics: action.topics
+      });
+    // case "CREATE_TOPIC":
+    // case "ADD_COMMENT":
   }
 
   console.log("Unhandled State!");
