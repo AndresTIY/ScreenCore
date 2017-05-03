@@ -4,13 +4,14 @@ class MovieTopic extends React.Component {
   render() {
     let topics = this.props.topics;
     let movieId = this.props.movieId;
-    console.log(movieId);
     if (topics !== null) {
-      console.log("topics:", topics);
-      topics.map((topic, i) => {
-        console.log(topic);
-      });
-      return <li>hello</li>;
+      return (
+        <ul>
+          {this.props.topics.map((topic, i) => {
+            return <li key={topic.objectId}>{topic.subject}</li>;
+          })}
+        </ul>
+      );
     } else {
       return <p>loading...</p>;
     }

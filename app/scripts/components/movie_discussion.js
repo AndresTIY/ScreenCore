@@ -23,9 +23,7 @@ class MovieDiscuss extends React.Component {
         <div>
           <MovieDiscussCard movie={currentMovie} />
           <h3>Discuss {currentMovie.title}!</h3>
-          <ul>
-            <MovieTopic movieId={paramId} topics={topics} />
-          </ul>
+          <MovieTopic movieId={paramId} topics={topics} />
 
         </div>
       );
