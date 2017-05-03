@@ -12,7 +12,7 @@ export default function loadTopics() {
         "application-type": "REST"
       }
     }).then(function(topics, success, xhr) {
-      dispatch({ type: "LOAD_TOPICS", topics: topics });
+      dispatch({ type: "LOAD_TOPICS", topics: topics.data });
     });
   };
 }

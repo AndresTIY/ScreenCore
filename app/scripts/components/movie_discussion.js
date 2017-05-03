@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import container from "../containers/all.js";
 import MovieDiscussCard from "./m_card.js";
+import MovieTopic from "./m_topic.js";
 import createTopic from "../actions/create_topic.js";
 import loadTopics from "../actions/load_topics.js";
 
@@ -11,6 +12,7 @@ class MovieDiscuss extends React.Component {
   }
   render() {
     let movieList = this.props.movies;
+    let topics = this.props.topics;
     let paramId = this.props.match.params.id;
 
     if (movieList !== null) {
@@ -22,10 +24,7 @@ class MovieDiscuss extends React.Component {
           <MovieDiscussCard movie={currentMovie} />
           <h3>Discuss {currentMovie.title}!</h3>
           <ul>
-            <li>Topic 1 created by (User) on (Date)</li>
-            <li>Topic 2 created by (User) on (Date)</li>
-            <li>Topic 3 created by (User) on (Date)</li>
-            <li>Topic 4 created by (User) on (Date)</li>
+            <MovieTopic movieId={paramId} topics={topics} />
           </ul>
 
         </div>
