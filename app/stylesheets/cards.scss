@@ -22,16 +22,13 @@
   }
 }
 .backdrop-poster {
-
         content: '';
         position: absolute;
         left: 0;
         right: 0;
         width: 100%;
-
         z-index: -1;
         display: block;
-
         will-change: opacity;
         filter: opacity(30%);
         transition: filter 1s;

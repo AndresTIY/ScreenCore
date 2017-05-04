@@ -6,7 +6,6 @@ import MovieTopic from "./m_topic.js";
 import DetailedView from "./m_detailed_view.js";
 import createTopic from "../actions/create_topic.js";
 import loadTopics from "../actions/load_topics.js";
-import Backdrop from "./m_backdrop.js";
 
 class MovieDiscuss extends React.Component {
   componentWillMount() {

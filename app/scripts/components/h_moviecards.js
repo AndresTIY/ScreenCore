@@ -1,15 +1,19 @@
 import React from "react";
+import _ from "lodash";
 
 const urlPath = "https://image.tmdb.org/t/p/w500/";
 
 class MovieCards extends React.Component {
   render() {
-    if (this.props.movies !== null) {
+    let movieList = this.props.movies;
+    let sorted = _.orderBy(movieList, ["release_date"], ["desc", "asc"]);
+
+    if (movieList !== null) {
       return (
         <div className="row">
           <h4 className="header">Current New Releases</h4>
 
-          {this.props.movies.map((data, i) => {
+          {sorted.map((data, i) => {
             var movieImage =
               "http://berg-group.com/wp-content/uploads/2014/11/Photo_not_available-4.jpg";
             if (data.poster_path !== null) {
