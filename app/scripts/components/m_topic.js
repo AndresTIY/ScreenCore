@@ -13,7 +13,7 @@ class MovieTopic extends React.Component {
               return (
                 <li key={topic.objectId}>
 
-                  {topic.subject}
+                  {topic.topic}
                   {" "}
                   created by
                   {" "}

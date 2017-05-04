@@ -13,26 +13,39 @@ class MovieDiscuss extends React.Component {
     super(props);
 
     this.submitTopic = this.submitTopic.bind(this);
+    this.currentMovie = this.currentMovie.bind(this);
   }
 
   componentWillMount() {
     this.props.dispatch(loadTopics());
   }
 
-  submitTopic(e, topic) {
+  currentMovie(paramsId) {
+    if (this.props.movies === null) {
+      return;
+    }
+    let currentMovie = this.props.movies.filter(movie => {
+      return movie.id === Number(paramsId);
+    })[0];
+
+    return currentMovie;
+  }
+
+  submitTopic(e, topic, message) {
     e.preventDefault();
-    this.props.dispatch(createTopic(topic));
+    let paramId = this.props.match.params.id;
+    let currMov = this.currentMovie(paramId);
+    let id = currMov.id;
+    this.props.dispatch(createTopic(topic, message, id));
   }
 
   render() {
     let movieList = this.props.movies;
     let topics = this.props.topics;
     let paramId = this.props.match.params.id;
+    let currentMovie = this.currentMovie(paramId);
 
     if (movieList !== null) {
-      let currentMovie = this.props.movies.filter(movie => {
-        return movie.id === Number(paramId);
-      })[0];
       return (
         <div>
           <MovieDiscussCard movie={currentMovie} />
