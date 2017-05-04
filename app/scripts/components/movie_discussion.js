@@ -4,13 +4,26 @@ import container from "../containers/all.js";
 import MovieDiscussCard from "./m_card.js";
 import MovieTopic from "./m_topic.js";
 import DetailedView from "./m_detailed_view.js";
+import NewThread from "./m_newthread.js";
 import createTopic from "../actions/create_topic.js";
 import loadTopics from "../actions/load_topics.js";
 
 class MovieDiscuss extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.submitTopic = this.submitTopic.bind(this);
+  }
+
   componentWillMount() {
     this.props.dispatch(loadTopics());
   }
+
+  submitTopic(e, message) {
+    e.preventDefault();
+    console.log("submit topic clicked");
+  }
+
   render() {
     let movieList = this.props.movies;
     let topics = this.props.topics;
@@ -24,6 +37,8 @@ class MovieDiscuss extends React.Component {
         <div>
           <MovieDiscussCard movie={currentMovie} />
           <h3>Discuss {currentMovie.title}!</h3>
+          <NewThread onSubmit={this.submitTopic} />
+
           <div className="show">
             <MovieTopic movieId={paramId} topics={topics} />
           </div>
@@ -39,7 +54,3 @@ class MovieDiscuss extends React.Component {
   }
 }
 export default connect(container.allState)(MovieDiscuss);
-// <form>
-//   <input ref="message" placeholder="new thread" />
-//   <button>Start New Thread</button>
-// </form>
