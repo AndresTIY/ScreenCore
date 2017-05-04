@@ -20,7 +20,3 @@ class MovieLinks extends React.Component {
 }
 
 export default MovieLinks;
-//movie links down the line
-// movie 1
-// movie 2
-// movie 3 etc

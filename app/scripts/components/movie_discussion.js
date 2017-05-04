@@ -3,8 +3,10 @@ import { connect } from "react-redux";
 import container from "../containers/all.js";
 import MovieDiscussCard from "./m_card.js";
 import MovieTopic from "./m_topic.js";
+import DetailedView from "./m_detailed_view.js";
 import createTopic from "../actions/create_topic.js";
 import loadTopics from "../actions/load_topics.js";
+import Backdrop from "./m_backdrop.js";
 
 class MovieDiscuss extends React.Component {
   componentWillMount() {
@@ -23,7 +25,12 @@ class MovieDiscuss extends React.Component {
         <div>
           <MovieDiscussCard movie={currentMovie} />
           <h3>Discuss {currentMovie.title}!</h3>
-          <MovieTopic movieId={paramId} topics={topics} />
+          <div className="show">
+            <MovieTopic movieId={paramId} topics={topics} />
+          </div>
+          <div className="hide">
+            <DetailedView />
+          </div>
 
         </div>
       );

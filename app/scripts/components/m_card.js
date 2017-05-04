@@ -1,6 +1,7 @@
 import React from "react";
 
 const urlPath = "https://image.tmdb.org/t/p/w500/";
+const urlBack = "https://image.tmdb.org/t/p/w1400_and_h450_bestv2/";
 
 class MovieDiscussCard extends React.Component {
   constructor(props) {
@@ -11,6 +12,12 @@ class MovieDiscussCard extends React.Component {
     let movie = this.props.movie;
     return (
       <div className="row featured-card">
+        <div className="backdrop-poster">
+          <img
+            className="backdrop-img"
+            src={`${urlBack}${movie.backdrop_path}`}
+          />
+        </div>
         <div className="col s12 m8 l8">
           <div className="card horizontal">
             <div className="card-image">

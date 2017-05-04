@@ -1,4 +1,5 @@
 import React from "react";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 class MovieTopic extends React.Component {
   render() {
@@ -11,7 +12,18 @@ class MovieTopic extends React.Component {
             if (topic.movie_id === movieId) {
               return (
                 <li key={topic.objectId}>
-                  {topic.subject} created by {topic.username} on {topic.created}
+
+                  {topic.subject}
+                  {" "}
+                  created by
+                  {" "}
+                  {topic.username}
+                  {" "}
+                  on
+                  {" "}
+                  {topic.created}
+                  {" "}
+
                 </li>
               );
             }
@@ -25,3 +37,5 @@ class MovieTopic extends React.Component {
 } //end of movie topic
 
 export default MovieTopic;
+// "discussion/"+movieId+topic.subject
+// <Link to={`${movieId}/${topic.subject}`}></Link>
