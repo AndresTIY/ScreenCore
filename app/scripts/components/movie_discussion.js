@@ -19,9 +19,9 @@ class MovieDiscuss extends React.Component {
     this.props.dispatch(loadTopics());
   }
 
-  submitTopic(e, message) {
+  submitTopic(e, topic) {
     e.preventDefault();
-    console.log("submit topic clicked");
+    this.props.dispatch(createTopic(topic));
   }
 
   render() {

@@ -3,8 +3,8 @@ import React from "react";
 class NewThread extends React.Component {
   onSubmit(e) {
     e.preventDefault();
-    let message = this.refs.topic.value;
-    this.props.onSubmit(e, message);
+    let topic = this.refs.topic.value;
+    this.props.onSubmit(e, topic);
   }
 
   render() {
