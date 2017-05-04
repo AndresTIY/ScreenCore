@@ -14,11 +14,18 @@ class MovieDiscuss extends React.Component {
 
     this.submitTopic = this.submitTopic.bind(this);
     this.currentMovie = this.currentMovie.bind(this);
+    this.currentUser = this.currentUser.bind(this);
   }
 
   componentWillMount() {
     this.props.dispatch(loadTopics());
   }
+
+  currentUser() {
+    let user = this.props.userInfo;
+    let username = user.username;
+    return username;
+  } //being worked on
 
   currentMovie(paramsId) {
     if (this.props.movies === null) {
@@ -36,7 +43,8 @@ class MovieDiscuss extends React.Component {
     let paramId = this.props.match.params.id;
     let currMov = this.currentMovie(paramId);
     let id = currMov.id;
-    this.props.dispatch(createTopic(topic, message, id));
+    let user = this.currentUser();
+    this.props.dispatch(createTopic(user, topic, message, id));
   }
 
   render() {

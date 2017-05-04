@@ -1,6 +1,6 @@
 import api from "../api.js";
 
-export default function createTopic(topic, message, id) {
+export default function createTopic(user, topic, message, id) {
   return function(dispatch) {
     $.ajax({
       url: api.url + "/data/discussion",
@@ -12,7 +12,7 @@ export default function createTopic(topic, message, id) {
         "application-type": "REST"
       },
       data: JSON.stringify({
-        username: "user",
+        username: user,
         topic: topic,
         message: message,
         movie_id: id

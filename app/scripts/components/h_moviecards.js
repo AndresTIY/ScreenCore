@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import _ from "lodash";
 
 const urlPath = "https://image.tmdb.org/t/p/w500/";
@@ -35,7 +36,7 @@ class MovieCards extends React.Component {
                     <p>Review Average: {data.vote_average}</p>
                   </div>
                   <div className="card-action">
-                    <a href={"/discussion/" + data.id}>Talk About It</a>
+                    <Link to={"/discussion/" + data.id}>Talk About It</Link>
                   </div>
                 </div>
               </div>

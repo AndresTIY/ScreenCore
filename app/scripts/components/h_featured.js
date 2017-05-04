@@ -1,6 +1,7 @@
 //featured homepage movie goes here
 import React from "react";
 import _ from "lodash";
+import { Link } from "react-router-dom";
 
 const urlPath = "https://image.tmdb.org/t/p/w500/";
 
@@ -35,7 +36,9 @@ class FeaturedMovie extends React.Component {
                   <p>Description: {mostPopular.overview}</p>
                 </div>
                 <div className="card-action">
-                  <a href={"/discussion/" + mostPopular.id}>Talk about it</a>
+                  <Link to={"/discussion/" + mostPopular.id}>
+                    Talk about it
+                  </Link>
                 </div>
               </div>
             </div>
