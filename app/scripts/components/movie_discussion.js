@@ -66,9 +66,6 @@ class MovieDiscuss extends React.Component {
           <div className="show">
             <MovieTopic movieId={paramId} topics={topics} />
           </div>
-          <div className="hide">
-            <DetailedView />
-          </div>
 
         </div>
       );
@@ -78,3 +75,6 @@ class MovieDiscuss extends React.Component {
   }
 }
 export default connect(container.allState)(MovieDiscuss);
+// <div className="show">
+//   <DetailedView />
+// </div>

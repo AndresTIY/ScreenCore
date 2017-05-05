@@ -1,5 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import TopicExpand from "./m_topic_expand.js";
+import DetailedView from "./m_detailed_view.js";
 
 class MovieTopic extends React.Component {
   render() {
@@ -13,20 +15,29 @@ class MovieTopic extends React.Component {
               let time = topic.created;
               let convert = moment(time).format("h:mma MM/DD/YYYY");
               return (
-                <li key={topic.objectId}>
+                <div key={topic.objectId}>
+                  <li>
+                    <TopicExpand />
 
-                  {topic.topic}
-                  {" "}
-                  created by
-                  {" "}
-                  {topic.username}
-                  {" "}
-                  on
-                  {" "}
-                  {convert}
-                  {" "}
+                    {topic.topic}
+                    {" "}
+                    created by
+                    {" "}
+                    {topic.username}
+                    {" "}
+                    on
+                    {" "}
+                    {convert}
+                    {" "}
 
-                </li>
+                  </li>
+                  <li>
+                    <div className="show">
+                      <DetailedView message={topic.message} />
+                    </div>
+
+                  </li>
+                </div>
               );
             }
           })}
@@ -39,5 +50,3 @@ class MovieTopic extends React.Component {
 } //end of movie topic
 
 export default MovieTopic;
-// "discussion/"+movieId+topic.subject
-// <Link to={`${movieId}/${topic.subject}`}></Link>
