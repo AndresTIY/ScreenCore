@@ -10,6 +10,8 @@ class MovieTopic extends React.Component {
         <ul>
           {this.props.topics.map((topic, i) => {
             if (topic.movie_id === movieId) {
+              let time = topic.created;
+              let convert = moment(time).format("h:mma MM/DD/YYYY");
               return (
                 <li key={topic.objectId}>
 
@@ -21,7 +23,7 @@ class MovieTopic extends React.Component {
                   {" "}
                   on
                   {" "}
-                  {topic.created}
+                  {convert}
                   {" "}
 
                 </li>
