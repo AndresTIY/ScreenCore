@@ -24,11 +24,11 @@ class Login extends React.Component {
           <form onSubmit={this.loginUser}>
             <div className="input-field col s6 m6 l6">
               <label htmlFor="email">Email</label>
-              <input ref="email" type="text" />
+              <input ref="email" type="text" value="user@example.com" />
             </div>
             <div className="input-field col s6 m6 l6">
               <label htmlFor="password">Password</label>
-              <input ref="pw" type="password" />
+              <input ref="pw" type="password" value="password" />
             </div>
             <div className="login-btn-div">
               <button className="btn login-btn" type="submit">Submit</button>

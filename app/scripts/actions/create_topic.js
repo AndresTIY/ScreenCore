@@ -1,4 +1,5 @@
 import api from "../api.js";
+import loadTopics from "../actions/load_topics.js";
 
 export default function createTopic(user, topic, message, id) {
   return function(dispatch) {
@@ -18,7 +19,7 @@ export default function createTopic(user, topic, message, id) {
         movie_id: id
       })
     }).then((data, success, xhr) => {
-      console.log(data);
+      dispatch(loadTopics());
     });
   };
 }
