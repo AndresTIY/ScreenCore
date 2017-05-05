@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import container from "../containers/all.js";
 import MovieDiscussCard from "./m_card.js";
 import MovieTopic from "./m_topic.js";
-import DetailedView from "./m_detailed_view.js";
 import NewThread from "./m_newthread.js";
 import createTopic from "../actions/create_topic.js";
 import loadTopics from "../actions/load_topics.js";

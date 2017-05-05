@@ -1,11 +1,16 @@
 import React from "react";
 
 class NewThread extends React.Component {
+  clearText() {
+    this.refs.topic.value = "";
+    this.refs.message.value = "";
+  }
   onSubmit(e) {
     e.preventDefault();
     let topic = this.refs.topic.value;
     let message = this.refs.message.value;
     this.props.onSubmit(e, topic, message);
+    this.clearText();
   }
 
   render() {
