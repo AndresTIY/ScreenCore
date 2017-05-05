@@ -5,7 +5,7 @@ class TopicExpand extends React.Component {
     super(props);
   }
   render() {
-    return <button className="btn">+</button>;
+    return <button onClick={this.props.onChange} className="btn">+</button>;
   }
 }
 export default TopicExpand;

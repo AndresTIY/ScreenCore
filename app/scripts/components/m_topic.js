@@ -4,9 +4,25 @@ import TopicExpand from "./m_topic_expand.js";
 import DetailedView from "./m_detailed_view.js";
 
 class MovieTopic extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { topicExpand: false };
+    this.handleTopicExpand = this.handleTopicExpand.bind(this);
+  }
+
+  handleTopicExpand() {
+    this.setState({
+      topicExpand: !this.state.topicExpand
+    });
+  }
+
   render() {
     let topics = this.props.topics;
     let movieId = Number(this.props.movieId);
+    let classToggle = "hide";
+    if (this.state.topicExpand) {
+      classToggle = "show";
+    }
     if (topics !== null) {
       return (
         <ul>
@@ -17,7 +33,7 @@ class MovieTopic extends React.Component {
               return (
                 <div key={topic.objectId}>
                   <li>
-                    <TopicExpand />
+                    <TopicExpand onChange={this.handleTopicExpand} />
 
                     {topic.topic}
                     {" "}
@@ -32,7 +48,7 @@ class MovieTopic extends React.Component {
 
                   </li>
                   <li>
-                    <div className="show">
+                    <div className={classToggle}>
                       <DetailedView message={topic.message} />
                     </div>
 
