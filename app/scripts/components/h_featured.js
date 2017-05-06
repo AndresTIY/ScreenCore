@@ -1,6 +1,6 @@
-//featured homepage movie goes here
 import React from "react";
 import _ from "lodash";
+
 import { Link } from "react-router-dom";
 
 const urlPath = "https://image.tmdb.org/t/p/w500/";
@@ -20,8 +20,12 @@ class FeaturedMovie extends React.Component {
           <div className="col s12 m8 l8">
             <h4 className="header">Most Popular</h4>
             <div className="card horizontal">
+
               <div className="card-image">
-                <img src={urlPath + mostPopular.poster_path} />
+                <Link to={"/discussion/" + mostPopular.id}>
+                  <img src={urlPath + mostPopular.poster_path} />
+                </Link>
+
               </div>
               <div className="card-stacked">
                 <div className="card-content ">
@@ -50,4 +54,5 @@ class FeaturedMovie extends React.Component {
     }
   }
 } // end of class
+
 export default FeaturedMovie;

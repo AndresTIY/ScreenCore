@@ -42,7 +42,6 @@ class MovieDiscuss extends React.Component {
     let paramId = this.props.match.params.id;
     let currMov = this.currentMovie(paramId);
     let id = currMov.id;
-    console.log(id);
     let user = "user";
     //change when ready to log in
     // let user = this.currentUser();

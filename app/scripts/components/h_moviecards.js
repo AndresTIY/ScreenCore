@@ -24,7 +24,9 @@ class MovieCards extends React.Component {
               <div key={i} className="col s12 m3 l3">
                 <div className="card medium">
                   <div className="card-image">
-                    <img src={movieImage} />
+                    <Link to={"/discussion/" + data.id}>
+                      <img src={movieImage} />
+                    </Link>
                   </div>
                   <div className="card-content">
                     <p className="truncate">{data.title}</p>
