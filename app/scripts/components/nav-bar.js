@@ -23,15 +23,15 @@ class NavBar extends React.Component {
     return (
       <nav>
         <div className="nav-wrapper">
-          <h3 className="brand-logo center"><Link to="/">Screen-Core</Link></h3>
+          <h3 className="brand-logo left"><Link to="/">Screen-Core</Link></h3>
           <div className={showClass}>
             <NavOgLeft />
           </div>
           <div className={hideClass}>
             <NavUser user={name} />
           </div>
-          <ul id="nav-mobile" className="right">
-            <li><Link to="/discussion">Discuss</Link></li>
+          <ul id="nav-mobile" className="nav-links">
+            <li><Link to="/discussion">Discuss It</Link></li>
           </ul>
         </div>
       </nav>

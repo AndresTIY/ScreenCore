@@ -40,3 +40,28 @@
 .row {
   margin: 0 2rem;
 }
+//navs
+.nav-wrapper {
+  background: #FEFFFF;
+
+  *{
+    color: #213141;
+  }
+}
+nav {
+  height: 100px;
+  .brand-logo {
+    position: relative;
+  }
+  .nav-links {
+    display: inline-block;
+    margin-top: .8rem;
+  }
+  .nav-login{
+
+    margin-top: -1rem;
+    a {
+    font-size: .75rem;
+    }
+  }
+}
