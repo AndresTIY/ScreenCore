@@ -62,9 +62,9 @@ class FeaturedMovie extends React.Component {
                   </div>
                   <p>{mostPopular.overview}</p>
                 </div>
-                <div className="card-action">
+                <div className="card-link">
                   <Link to={"/discussion/" + mostPopular.id}>
-                    Talk about it
+                    TALK ABOUT IT &gt;
                   </Link>
                 </div>
               </div>

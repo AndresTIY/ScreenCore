@@ -8,7 +8,7 @@
     background: none;
     color: #FFFFFF;
     .header {
-      color: #82FED7;
+      color: $color-teal;
       font-weight: bold;
     }
     .movie-title {
@@ -20,7 +20,7 @@
     .review-section {
 
 
-        color: #82FED7;
+        color: $color-teal;
         .vote-avg {
           font-size: 3rem;
         }
@@ -58,6 +58,22 @@
   }
   .col {
     margin-top: 13px;
+    width: 75%;
+  }
+  .card-link {
+    position: relative;
+    left: 1.7rem;
+    border: 2px solid $color-teal;
+    text-align: center;
+    width: 12rem;
+    a {
+      color: #FFFFFF;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  }
+  .card-action {
+
   }
 
 
