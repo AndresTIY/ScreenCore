@@ -16,7 +16,7 @@ export default function app() {
     <Provider store={store}>
       <Router>
         <div>
-          <NavBar />
+          <Route path="/" component={NavBar} />
           <Route path="/navbar" component={NavBar} />
           <Route exact path="/" component={AppRoot} />
           <Route exact path="/login" component={Login} />

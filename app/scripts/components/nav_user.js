@@ -15,7 +15,7 @@ class NavUser extends React.Component {
           </Link>
         </li>
         <li>|</li>
-        <li><Link to="/profile">Logout</Link></li>
+        <li className="logout" onClick={this.props.handleLogout}>Logout</li>
       </ul>
     );
   }

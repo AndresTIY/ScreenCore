@@ -1,23 +1,18 @@
 import api from "../api.js";
 
-export default function userLogin(email, pw, history) {
+export default function userLogout(token, history) {
   return function(dispatch) {
     return $.ajax({
-      url: api.url + "/users/login",
-      method: "POST",
+      url: api.url + "/users/logout",
+      method: "GET",
       contentType: "application/json",
       headers: {
         "application-id": api.appId,
         "secret-key": api.restKey,
-        "Content-Type": "application/json",
+        "user-token": token,
         "application-type": "REST"
-      },
-      data: JSON.stringify({
-        login: email,
-        password: pw
-      })
+      }
     }).then(data => {
-      dispatch({ type: "USER_LOGGED_IN", data: data });
       history.push("/");
     });
   };

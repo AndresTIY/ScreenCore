@@ -5,10 +5,20 @@ import NavOgLeft from "./nav_og_left.js";
 import NavUser from "./nav_user.js";
 import container from "../containers/all.js";
 import loadMovies from "../actions/load_movies.js";
+import userLogout from "../actions/logout_action.js";
 
 class NavBar extends React.Component {
+  constructor(props) {
+    super(props);
+    this.logoutUser = this.logoutUser.bind(this);
+  }
   componentDidMount() {
     this.props.dispatch(loadMovies());
+  }
+  logoutUser(e) {
+    e.preventDefault();
+    let token = this.props.userInfo["user-token"];
+    this.props.dispatch(userLogout(token, this.props.history));
   }
   render() {
     let hideClass = "hide";
@@ -28,7 +38,7 @@ class NavBar extends React.Component {
             <NavOgLeft />
           </div>
           <div className={hideClass}>
-            <NavUser user={name} />
+            <NavUser handleLogout={this.logoutUser} user={name} />
           </div>
           <ul id="nav-mobile" className="nav-links">
             <li><Link to="/discussion">Discuss It</Link></li>
