@@ -1,0 +1,54 @@
+nav {
+
+  height: 100px;
+  background-color: #FEFFFF;
+  box-shadow: none;
+
+    ul {
+      a:hover {
+        text-decoration: underline;
+        background-color: transparent;
+      }
+    }
+
+    .nav-wrapper {
+      h3 {
+        font-size: 3rem;
+        margin-left: 1rem;
+      }
+      * {
+        color: #213141;
+      }
+    }
+
+  .brand-logo {
+    position: relative;
+  }
+
+  .nav-links {
+    display: inline-block;
+    margin-top: 1.6rem;
+  }
+
+  .nav-login {
+
+    margin-top: -1rem;
+    a {
+    font-size: .75rem;
+    display: inline;
+
+
+    }
+    .user{
+      font-weight: bold;
+    }
+
+  }
+  .nav-user {
+
+  }
+  .material-icons {
+    float: left;
+  }
+
+}

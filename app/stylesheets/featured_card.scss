@@ -1,0 +1,38 @@
+.featured-card {
+  p {
+    white-space: normal;
+    font-size: 1rem;
+  }
+  .card {
+    position: static;
+  }
+  .featured-backdrop {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: -1;
+    display: block;
+    background: black;
+
+    .backdrop-img {
+      height: 440px;
+      width: 100%;
+      display: block;
+      filter: opacity(.3);
+
+    }
+    .overlay {
+
+
+      display: inline-block;
+      position: relative;
+    }
+  }
+
+
+  .col {
+    margin-top: 13px;
+  }
+}

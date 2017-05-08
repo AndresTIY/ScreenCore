@@ -23,7 +23,7 @@ class NavBar extends React.Component {
     return (
       <nav>
         <div className="nav-wrapper">
-          <h3 className="brand-logo left"><Link to="/">Screen-Core</Link></h3>
+          <h3 className="brand-logo left"><Link to="/">ScreenCore</Link></h3>
           <div className={showClass}>
             <NavOgLeft />
           </div>
