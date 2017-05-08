@@ -5,6 +5,32 @@
   }
   .card {
     position: static;
+    background: none;
+    color: #FFFFFF;
+    .header {
+      color: #82FED7;
+      font-weight: bold;
+    }
+    .movie-title {
+      letter-spacing: -2px;
+    }
+    .release-date {
+      font-weight: bold;
+    }
+    .review-section {
+
+
+        color: #82FED7;
+        .vote-avg {
+          font-size: 3rem;
+        }
+        .vote-text {
+          font-size: 1rem;
+          display: inline-block;
+          margin-left: .8rem;
+        }
+
+    }
   }
   .featured-backdrop {
     content: '';
@@ -20,19 +46,20 @@
       height: 440px;
       width: 100%;
       display: block;
-      filter: opacity(.3);
+      filter: opacity(.2);
 
     }
-    .overlay {
 
 
-      display: inline-block;
-      position: relative;
-    }
+
   }
-
-
+  .card-stacked{
+    // background: black;
+  }
   .col {
     margin-top: 13px;
   }
+
+
+
 }
