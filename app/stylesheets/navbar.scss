@@ -50,5 +50,17 @@ nav {
   .material-icons {
     float: left;
   }
+  .logout {
+    font-size: .75rem;
+    display: inline;
+    margin: 1px 1rem 0 1rem;
+
+
+  }
+  .logout:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
 
 }
