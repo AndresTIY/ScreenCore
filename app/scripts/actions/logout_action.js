@@ -13,6 +13,7 @@ export default function userLogout(token, history) {
         "application-type": "REST"
       }
     }).then(data => {
+      dispatch({ type: "CLEAR_USER" });
       history.push("/");
     });
   };

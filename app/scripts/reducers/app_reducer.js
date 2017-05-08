@@ -24,6 +24,11 @@ export default function AppReducer(state, action) {
       return Object.assign({}, state, {
         topics: action.topics
       });
+
+    case "CLEAR_USER":
+      return Object.assign({}, state, {
+        userInfo: null
+      });
     // case "CREATE_TOPIC":
     // case "ADD_COMMENT":
   }
