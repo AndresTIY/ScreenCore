@@ -4,8 +4,18 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 class NavUser extends React.Component {
   render() {
     return (
-      <ul id="nav-mobile" className="right">
-        <li><Link to="/profile">Logged In As {this.props.user}</Link></li>
+      <ul id="nav-mobile" className="nav-login right">
+        <li>
+          <i className="small material-icons">perm_identity</i>
+          <Link to="/profile">
+            {" "}
+            Logged In As
+            {" "}
+            <span className="user">{this.props.user}</span>
+          </Link>
+        </li>
+        <li>|</li>
+        <li><Link to="/profile">Logout</Link></li>
       </ul>
     );
   }

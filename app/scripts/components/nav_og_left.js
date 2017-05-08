@@ -5,7 +5,11 @@ class NavOgLeft extends React.Component {
   render() {
     return (
       <ul id="nav-mobile" className="nav-login right">
-        <li><Link to="/login">Login</Link></li>
+        <li>
+          {" "}<i className="small material-icons">perm_identity</i>
+          <Link to="/login">Login </Link>
+        </li>
+        <li>|</li>
         <li><Link to="/register">Register</Link></li>
       </ul>
     );
