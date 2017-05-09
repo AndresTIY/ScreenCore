@@ -1,6 +1,11 @@
 import React from "react";
-//allow user to add a rating
+
 class Rate extends React.Component {
+  constructor(props) {
+    super(props);
+    this.setState({ rating: newRating });
+  }
+
   render() {
     return (
       <div className="rate">
