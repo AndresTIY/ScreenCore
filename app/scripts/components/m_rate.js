@@ -1,5 +1,20 @@
 import React from "react";
 //allow user to add a rating
 class Rate extends React.Component {
-  render() {}
+  render() {
+    return (
+      <div className="rate">
+        <p>Have you seen this movie? Give it a rating!</p>
+        <div className="icon-scale">
+          <i className="star material-icons">star</i>
+          <i className="star material-icons">star</i>
+          <i className="star material-icons">star</i>
+          <i className="star material-icons">star</i>
+          <i className="star material-icons">star</i>
+
+        </div>
+      </div>
+    );
+  }
 } //end of rate
+export default Rate;

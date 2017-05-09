@@ -7,6 +7,7 @@
     position: static;
     background: none;
     color: #FFFFFF;
+
     .header {
       color: $color-teal;
       font-weight: bold;
@@ -17,8 +18,10 @@
     .release-date {
       font-weight: bold;
     }
-    .review-section {
+    .review-section, .user-review-section {
         color: $color-teal;
+        width: 15rem;
+        display: inline-block;
         .vote-avg {
           font-size: 3rem;
         }
@@ -27,6 +30,22 @@
           display: inline-block;
           margin-left: .8rem;
         }
+        .user-rating {
+          margin-left: 2rem;
+          margin-bottom: 2rem;
+          margin-top: -.9rem;
+        }
+    }
+    .user-review-section {
+      float: right;
+    }
+    .rate {
+      text-align: center;
+      .star:hover {
+        color: yellow;
+        cursor: pointer;
+
+      }
     }
   }
   .featured-backdrop {
@@ -50,7 +69,7 @@
 
   .col {
     margin-top: 13px;
-    width: 75%;
+    width: 100%;
   }
   .card-link {
     position: relative;
