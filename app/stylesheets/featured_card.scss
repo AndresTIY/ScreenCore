@@ -41,9 +41,9 @@
     }
     .rate {
       text-align: center;
-      .star:hover {
-        color: yellow;
-        cursor: pointer;
+      .stars {
+        display: inline-block;
+        margin: 0 auto;
 
       }
     }
