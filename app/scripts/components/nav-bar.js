@@ -5,6 +5,7 @@ import NavOgLeft from "./nav_og_left.js";
 import NavUser from "./nav_user.js";
 import container from "../containers/all.js";
 import loadMovies from "../actions/load_movies.js";
+import loadRatings from "../actions/load_ratings.js";
 import userLogout from "../actions/logout_action.js";
 
 class NavBar extends React.Component {
@@ -14,6 +15,7 @@ class NavBar extends React.Component {
   }
   componentDidMount() {
     this.props.dispatch(loadMovies());
+    this.props.dispatch(loadRatings());
   }
   logoutUser(e) {
     e.preventDefault();

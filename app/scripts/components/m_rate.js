@@ -1,16 +1,17 @@
 import React from "react";
 import ReactStars from "react-stars";
 
-const ratingChanged = newRating => {
-  console.log(newRating);
-};
-
 class Rate extends React.Component {
   constructor(props) {
     super(props);
+    // this.handleRating = this.handleRating.bind(this);
   }
 
   render() {
+    const ratingChanged = newRating => {
+      console.log(newRating);
+      this.props.handleRating(newRating);
+    };
     return (
       <div className="rate">
         <p>Have you seen this movie? Give it a rating!</p>

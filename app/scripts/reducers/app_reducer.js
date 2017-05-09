@@ -3,7 +3,8 @@ export default function AppReducer(state, action) {
     return {
       movies: null,
       userInfo: null,
-      topics: null
+      topics: null,
+      ratingInfo: null
     };
   }
 
@@ -28,6 +29,11 @@ export default function AppReducer(state, action) {
     case "CLEAR_USER":
       return Object.assign({}, state, {
         userInfo: null
+      });
+
+    case "LOAD_RATINGS":
+      return Object.assign({}, state, {
+        ratingInfo: action.data
       });
     // case "CREATE_TOPIC":
     // case "ADD_COMMENT":

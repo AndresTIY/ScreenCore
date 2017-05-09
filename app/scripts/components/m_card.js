@@ -36,7 +36,7 @@ class MovieDiscussCard extends React.Component {
                 </p>
                 <RatingView voteavg={movie.vote_average} />
                 <UserRatingView />
-                <Rate />
+                <Rate handleRating={this.props.handleRating} />
                 <p>{movie.overview}</p>
               </div>
 

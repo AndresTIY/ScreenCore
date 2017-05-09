@@ -6,6 +6,7 @@ import MovieTopic from "./m_topic.js";
 import NewThread from "./m_newthread.js";
 import createTopic from "../actions/create_topic.js";
 import loadTopics from "../actions/load_topics.js";
+import submitRating from "../actions/submit_rating.js";
 
 class MovieDiscuss extends React.Component {
   constructor(props) {
@@ -14,6 +15,7 @@ class MovieDiscuss extends React.Component {
     this.submitTopic = this.submitTopic.bind(this);
     this.currentMovie = this.currentMovie.bind(this);
     this.currentUser = this.currentUser.bind(this);
+    this.handleRating = this.handleRating.bind(this);
   }
 
   componentWillMount() {
@@ -43,9 +45,19 @@ class MovieDiscuss extends React.Component {
     let currMov = this.currentMovie(paramId);
     let id = currMov.id;
     let user = "user";
-    //change when ready to log in
+    // //change when ready to log in
     // let user = this.currentUser();
+
     this.props.dispatch(createTopic(user, topic, message, id));
+  }
+  handleRating(rating) {
+    let paramId = this.props.match.params.id;
+    let currMov = this.currentMovie(paramId);
+    let id = currMov.id;
+    // let user = this.currentUser();
+    let user = "user";
+    console.log(rating, id, user);
+    this.props.dispatch(submitRating(rating, id, user));
   }
 
   render() {
@@ -57,7 +69,10 @@ class MovieDiscuss extends React.Component {
     if (movieList !== null) {
       return (
         <div>
-          <MovieDiscussCard movie={currentMovie} />
+          <MovieDiscussCard
+            handleRating={this.handleRating}
+            movie={currentMovie}
+          />
           <h3>Discuss {currentMovie.title}!</h3>
           <NewThread onSubmit={this.submitTopic} />
 
