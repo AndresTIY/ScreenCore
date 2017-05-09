@@ -35,7 +35,10 @@ class MovieDiscussCard extends React.Component {
                   RELEASE DATE: {moment(movie.release_date).format("M/DD/YYYY")}
                 </p>
                 <RatingView voteavg={movie.vote_average} />
-                <UserRatingView />
+                <UserRatingView
+                  movieId={this.props.movieId}
+                  ratings={this.props.ratings}
+                />
                 <Rate handleRating={this.props.handleRating} />
                 <p>{movie.overview}</p>
               </div>

@@ -4,7 +4,6 @@ import ReactStars from "react-stars";
 class Rate extends React.Component {
   constructor(props) {
     super(props);
-    // this.handleRating = this.handleRating.bind(this);
   }
 
   render() {

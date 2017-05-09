@@ -38,6 +38,9 @@
     }
     .user-review-section {
       float: right;
+      .no-votes{
+        font-size: 1rem;
+      }
     }
     .rate {
       text-align: center;

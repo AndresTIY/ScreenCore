@@ -63,6 +63,7 @@ class MovieDiscuss extends React.Component {
   render() {
     let movieList = this.props.movies;
     let topics = this.props.topics;
+    let ratings = this.props.ratingInfo;
     let paramId = this.props.match.params.id;
     let currentMovie = this.currentMovie(paramId);
 
@@ -72,6 +73,8 @@ class MovieDiscuss extends React.Component {
           <MovieDiscussCard
             handleRating={this.handleRating}
             movie={currentMovie}
+            ratings={ratings}
+            movieId={paramId}
           />
           <h3>Discuss {currentMovie.title}!</h3>
           <NewThread onSubmit={this.submitTopic} />
