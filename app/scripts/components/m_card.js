@@ -1,4 +1,6 @@
 import React from "react";
+import RatingView from "./m_rating_view.js";
+import Rate from "./m_rate.js";
 
 const urlPath = "https://image.tmdb.org/t/p/w500/";
 const urlBack = "https://image.tmdb.org/t/p/w1400_and_h450_bestv2/";
@@ -31,13 +33,7 @@ class MovieDiscussCard extends React.Component {
                 <p className="release-date">
                   RELEASE DATE: {moment(movie.release_date).format("M/DD/YYYY")}
                 </p>
-                <div className="review-section">
-                  <span className="vote-avg">{movie.vote_average} |</span>
-                  <div className="vote-text">
-                    <span className="avg"> AVERAGE </span><br />
-                    <span className="rating"> RATING</span>
-                  </div>
-                </div>
+                <RatingView voteavg={movie.vote_average} />
                 <p>{movie.overview}</p>
               </div>
 
