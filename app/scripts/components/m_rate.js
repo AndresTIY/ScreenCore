@@ -11,16 +11,28 @@ class Rate extends React.Component {
       console.log(newRating);
       this.props.handleRating(newRating);
     };
+    let starColor = "#ffd700";
+    let showClass = "show";
+    let hideClass = "hide";
+    let starsClass = "stars ";
+
+    if (this.props.user === null) {
+      showClass = "hide";
+      hideClass = "show";
+      starsClass = "stars disabled";
+    }
     return (
       <div className="rate">
-        <p>Have you seen this movie? Give it a rating!</p>
-        <div className="stars">
+        <p className={showClass}>Have you seen this movie? Give it a rating!</p>
+        <p className={hideClass}>Please login to submit your vote!</p>
+        <div className={starsClass}>
           <ReactStars
             count={5}
             onChange={ratingChanged}
             size={24}
-            color2={"#ffd700"}
+            color2={starColor}
           />
+          {" "}
         </div>
       </div>
     );

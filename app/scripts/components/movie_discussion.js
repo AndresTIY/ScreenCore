@@ -65,6 +65,7 @@ class MovieDiscuss extends React.Component {
     let topics = this.props.topics;
     let ratings = this.props.ratingInfo;
     let paramId = this.props.match.params.id;
+    let user = this.props.userInfo;
     let currentMovie = this.currentMovie(paramId);
 
     if (movieList !== null) {
@@ -75,6 +76,7 @@ class MovieDiscuss extends React.Component {
             movie={currentMovie}
             ratings={ratings}
             movieId={paramId}
+            user={user}
           />
           <h3>Discuss {currentMovie.title}!</h3>
           <NewThread onSubmit={this.submitTopic} />

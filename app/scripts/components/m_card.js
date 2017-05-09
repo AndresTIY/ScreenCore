@@ -39,7 +39,10 @@ class MovieDiscussCard extends React.Component {
                   movieId={this.props.movieId}
                   ratings={this.props.ratings}
                 />
-                <Rate handleRating={this.props.handleRating} />
+                <Rate
+                  user={this.props.user}
+                  handleRating={this.props.handleRating}
+                />
                 <p>{movie.overview}</p>
               </div>
 
