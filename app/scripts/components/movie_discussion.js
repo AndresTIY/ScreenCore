@@ -33,6 +33,11 @@ class MovieDiscuss extends React.Component {
 
     return currentMovie;
   }
+  currentUser() {
+    let user = this.props.userInfo;
+    let username = user.username;
+    return username;
+  } //being worked on
 
   submitTopic(e, topic, message) {
     e.preventDefault();
@@ -92,7 +97,10 @@ class MovieDiscuss extends React.Component {
                 Write a Review
               </button>
               <div className={hideClass}>
-                <NewThread onSubmit={this.submitTopic} />
+                <NewThread
+                  closeModal={this.handleModal}
+                  onSubmit={this.submitTopic}
+                />
               </div>
 
               <MovieTopic movieId={paramId} topics={topics} />
@@ -107,9 +115,3 @@ class MovieDiscuss extends React.Component {
   }
 }
 export default connect(container.allState)(MovieDiscuss);
-
-// currentUser() {
-//   let user = this.props.userInfo;
-//   let username = user.username;
-//   return username;
-// } //being worked on

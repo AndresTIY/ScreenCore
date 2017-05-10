@@ -1,6 +1,8 @@
 .sidenav {
-  color: black;
   a {
     color: black;
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }

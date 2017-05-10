@@ -20,29 +20,24 @@ class TopicExpand extends React.Component {
       classToggle = "show";
     }
     return (
-      <div>
+      <div className="topic-section">
         <li>
-          <button onClick={this.handleTopicExpand} className="btn">
-            +
-          </button>
 
-          {topics.topic}
+          <span className="username">{topics.username}</span>
           {" "}
-          created by
+          <span className="time">posted on {this.props.time}</span>
           {" "}
-          {topics.username}
+          <p>
+            <span onClick={this.handleTopicExpand} className="topic">
+              {topics.topic}
+            </span>
+          </p>
           {" "}
-          on
-          {" "}
-          {this.props.time}
-          {" "}
-
         </li>
         <li>
           <div className={classToggle}>
             <DetailedView message={topics.message} />
           </div>
-
         </li>
       </div>
     );

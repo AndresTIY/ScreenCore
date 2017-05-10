@@ -1,0 +1,20 @@
+.topic-section {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  .topic {
+    color: #2952a3;
+    &:hover {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+  .username {
+    font-weight: bold;
+  }
+  .time {
+    font-size: .75rem;
+  }
+  .review-body{
+
+  }
+}
