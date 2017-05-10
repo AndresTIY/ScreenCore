@@ -2,9 +2,29 @@
 
   p{
     white-space: nowrap;
-    font-size: .75rem
+    font-size: .75rem;
+    font-weight: bold;
+  }
+  .title {
+    font-size: 1rem;
+  }
+  .release-date {
+    font-weight: normal;
+  }
+
+  .card-action {
+    .material-icons {
+      vertical-align: bottom;
+    }
+  }
+  .col {
+
+
+// #2A7379
   }
 }
+
+
 .login-card{
   margin-top: 2rem;
   .login-btn-div {

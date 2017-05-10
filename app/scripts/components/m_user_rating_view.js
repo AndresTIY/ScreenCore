@@ -28,7 +28,7 @@ class UserRatingView extends React.Component {
     let avg = avgRating.reduce((a, b) => a + b) / avgRating.length;
     let decFixed = avg.toFixed(1);
     console.log(decFixed);
-    return decFixed;
+    return decFixed * 2;
   }
 
   // componentWillMount() {

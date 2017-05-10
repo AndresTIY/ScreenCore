@@ -29,16 +29,25 @@ class MovieCards extends React.Component {
                     </Link>
                   </div>
                   <div className="card-content">
-                    <p className="truncate">{data.title}</p>
-                    <p>
-                      Release Date:
+                    <p className="title truncate">{data.title.toUpperCase()}</p>
+                    <p className="release-date">
+                      RELEASE DATE:
                       {" "}
                       {moment(data.release_date).format("M/DD/YYYY")}
                     </p>
-                    <p>Review Average: {data.vote_average}</p>
+                    <p className="rating">
+                      AVERAGE RATING: {data.vote_average}
+                    </p>
                   </div>
-                  <div className="card-action">
-                    <Link to={"/discussion/" + data.id}>Talk About It</Link>
+                  <div className="card-action blue-grey darken-4">
+                    <Link to={"/discussion/" + data.id}>
+                      <span className="white-text">Talk About It</span>
+
+                      <i className="cyan-text text-darken-4 material-icons">
+                        forum
+                      </i>
+
+                    </Link>
                   </div>
                 </div>
               </div>
