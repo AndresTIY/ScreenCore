@@ -42,12 +42,13 @@ class NavBar extends React.Component {
           <div className={hideClass}>
             <NavUser handleLogout={this.logoutUser} user={name} />
           </div>
-          <ul id="nav-mobile" className="nav-links">
-            <li><Link to="/discussion">Discuss It</Link></li>
-          </ul>
+
         </div>
       </nav>
     );
   }
 }
 export default connect(container.allState)(NavBar);
+// <ul id="nav-mobile" className="nav-links">
+//   <li><Link to="/discussion">Discuss It</Link></li>
+// </ul>

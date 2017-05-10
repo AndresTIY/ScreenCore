@@ -12,22 +12,16 @@ import submitRating from "../actions/submit_rating.js";
 class MovieDiscuss extends React.Component {
   constructor(props) {
     super(props);
-
+    this.state = { isModalOpen: false };
     this.submitTopic = this.submitTopic.bind(this);
     this.currentMovie = this.currentMovie.bind(this);
-    this.currentUser = this.currentUser.bind(this);
     this.handleRating = this.handleRating.bind(this);
+    this.handleModal = this.handleModal.bind(this);
   }
 
   componentWillMount() {
     this.props.dispatch(loadTopics());
   }
-
-  currentUser() {
-    let user = this.props.userInfo;
-    let username = user.username;
-    return username;
-  } //being worked on
 
   currentMovie(paramsId) {
     if (this.props.movies === null) {
@@ -60,6 +54,10 @@ class MovieDiscuss extends React.Component {
     console.log(rating, id, user);
     this.props.dispatch(submitRating(rating, id, user));
   }
+  handleModal() {
+    this.setState({ isModalOpen: !this.state.isModalOpen });
+    console.log(this.state.isModalOpen);
+  }
 
   render() {
     let movieList = this.props.movies;
@@ -70,6 +68,11 @@ class MovieDiscuss extends React.Component {
     let currentMovie = this.currentMovie(paramId);
 
     if (movieList !== null) {
+      let hideClass = "hide";
+
+      if (this.state.isModalOpen) {
+        hideClass = "show";
+      }
       return (
         <div>
           <MovieDiscussCard
@@ -84,9 +87,13 @@ class MovieDiscuss extends React.Component {
               <MovieSideNav movies={movieList} />
             </div>
             <div className="col s9">
-
-              <h3>Discuss {currentMovie.title}!</h3>
-              <NewThread onSubmit={this.submitTopic} />
+              <h3 className="center">Discuss {currentMovie.title}!</h3>
+              <button onClick={this.handleModal} className="review-btn">
+                Write a Review
+              </button>
+              <div className={hideClass}>
+                <NewThread onSubmit={this.submitTopic} />
+              </div>
 
               <MovieTopic movieId={paramId} topics={topics} />
             </div>
@@ -100,3 +107,9 @@ class MovieDiscuss extends React.Component {
   }
 }
 export default connect(container.allState)(MovieDiscuss);
+
+// currentUser() {
+//   let user = this.props.userInfo;
+//   let username = user.username;
+//   return username;
+// } //being worked on
