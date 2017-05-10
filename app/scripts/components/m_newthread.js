@@ -15,13 +15,18 @@ class NewThread extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.onSubmit.bind(this)}>
-        <input ref="topic" type="text" placeholder="new thread topic" />
-        <input ref="message" type="text" placeholder="message" />
-        <button className="btn">
-          Start New Thread
-        </button>
-      </form>
+      <div className="custom-modal">
+        <div className="add-review">
+          <form onSubmit={this.onSubmit.bind(this)}>
+            <input ref="topic" type="text" placeholder="review topic" />
+            <textarea ref="message" type="text" placeholder="review" />
+            <button className="btn right">
+              Add Your Review
+            </button>
+          </form>
+        </div>
+        <div className="custom-backdrop" />
+      </div>
     );
   }
 }
