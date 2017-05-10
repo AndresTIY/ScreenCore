@@ -22,7 +22,6 @@ class TopicExpand extends React.Component {
     return (
       <div className="topic-section">
         <li>
-
           <span className="username">{topics.username}</span>
           {" "}
           <span className="time">posted on {this.props.time}</span>

@@ -102,7 +102,6 @@ class MovieDiscuss extends React.Component {
                   onSubmit={this.submitTopic}
                 />
               </div>
-
               <MovieTopic movieId={paramId} topics={topics} />
             </div>
           </div>

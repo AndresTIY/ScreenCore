@@ -20,7 +20,7 @@ class MovieTopic extends React.Component {
               let time = topic.created;
               let convert = moment(time).format("h:mma MM/DD/YYYY");
               return (
-                <div key={topic.objectId}>
+                <div className="topic-parent" key={topic.objectId}>
                   <TopicExpand
                     handleTopicExpand={this.handleTopicExpand}
                     topics={topic}
