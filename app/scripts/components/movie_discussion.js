@@ -4,6 +4,7 @@ import container from "../containers/all.js";
 import MovieDiscussCard from "./m_card.js";
 import MovieTopic from "./m_topic.js";
 import NewThread from "./m_newthread.js";
+import MovieSideNav from "./m_sidenav.js";
 import createTopic from "../actions/create_topic.js";
 import loadTopics from "../actions/load_topics.js";
 import submitRating from "../actions/submit_rating.js";
@@ -78,11 +79,17 @@ class MovieDiscuss extends React.Component {
             movieId={paramId}
             user={user}
           />
-          <h3>Discuss {currentMovie.title}!</h3>
-          <NewThread onSubmit={this.submitTopic} />
+          <div className="row">
+            <div className="col s3">
+              <MovieSideNav movies={movieList} />
+            </div>
+            <div className="col s9">
 
-          <div className="show">
-            <MovieTopic movieId={paramId} topics={topics} />
+              <h3>Discuss {currentMovie.title}!</h3>
+              <NewThread onSubmit={this.submitTopic} />
+
+              <MovieTopic movieId={paramId} topics={topics} />
+            </div>
           </div>
 
         </div>
@@ -93,6 +100,3 @@ class MovieDiscuss extends React.Component {
   }
 }
 export default connect(container.allState)(MovieDiscuss);
-// <div className="show">
-//   <DetailedView />
-// </div>

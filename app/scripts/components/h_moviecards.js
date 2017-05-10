@@ -22,7 +22,7 @@ class MovieCards extends React.Component {
             }
             return (
               <div key={i} className="col s12 m3 l3">
-                <div className="card medium">
+                <div className="card medium hoverable">
                   <div className="card-image">
                     <Link to={"/discussion/" + data.id}>
                       <img src={movieImage} />
