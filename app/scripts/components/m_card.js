@@ -14,7 +14,7 @@ class MovieDiscussCard extends React.Component {
   render() {
     let movie = this.props.movie;
     return (
-      <div className="row featured-card">
+      <div className="row movie-card">
 
         <div className="featured-backdrop">
           <img
@@ -24,7 +24,7 @@ class MovieDiscussCard extends React.Component {
         </div>
 
         <div className="col s12 m12 l12">
-          <div className="card medium horizontal">
+          <div className="card small horizontal">
             <div className="card-image">
               <img src={urlPath + movie.poster_path} />
             </div>

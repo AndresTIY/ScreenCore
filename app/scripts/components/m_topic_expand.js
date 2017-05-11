@@ -16,18 +16,26 @@ class TopicExpand extends React.Component {
   render() {
     let topics = this.props.topics;
     let classToggle = "hide";
+    let clickChangeIcon = "[ + ]";
+    let userStyle = "username";
+
     if (this.state.topicExpand) {
       classToggle = "show";
+      clickChangeIcon = "[ - ]";
+      userStyle = "italic";
     }
     return (
       <div className="topic-section">
         <li>
-          <span className="username">{topics.username}</span>
+          <span onClick={this.handleTopicExpand} className="plus-click">
+            {clickChangeIcon}
+          </span>
+          <span className={userStyle}> {topics.username}</span>
           {" "}
           <span className="time">posted on {this.props.time}</span>
           {" "}
           <p>
-            <span onClick={this.handleTopicExpand} className="topic">
+            <span className="topic">
               {topics.topic}
             </span>
           </p>

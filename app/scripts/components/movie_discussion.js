@@ -93,7 +93,7 @@ class MovieDiscuss extends React.Component {
             </div>
             <div className="col s9">
               <h3 className="center">Discuss {currentMovie.title}!</h3>
-              <button onClick={this.handleModal} className="review-btn">
+              <button onClick={this.handleModal} className="btn review-btn">
                 Write a Review
               </button>
               <div className={hideClass}>

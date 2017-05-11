@@ -1,0 +1,97 @@
+.movie-card {
+  p {
+    white-space: normal;
+    font-size: 1rem;
+  }
+  .card {
+    position: static;
+    background: none;
+    color: #FFFFFF;
+
+    .header {
+      color: $color-teal;
+      font-weight: bold;
+    }
+    .movie-title {
+      letter-spacing: -2px;
+    }
+    .release-date {
+      font-weight: bold;
+    }
+    .review-section, .user-review-section {
+        color: $color-teal;
+        width: 15rem;
+        display: inline-block;
+        .vote-avg {
+          font-size: 3rem;
+        }
+        .vote-text {
+          font-size: 1rem;
+          display: inline-block;
+          margin-left: .8rem;
+        }
+        .user-rating {
+          margin-left: 2rem;
+          margin-bottom: 2rem;
+          margin-top: -.9rem;
+        }
+    }
+    .user-review-section {
+      float: right;
+      .no-votes{
+        font-size: 1rem;
+        vertical-align: middle;
+      }
+    }
+    .rate {
+      text-align: center;
+      .stars {
+        display: inline-block;
+        margin: 0 auto;
+        &.disabled {
+          pointer-events: none;
+        }
+      }
+    }
+  }
+  .featured-backdrop {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: -1;
+    display: block;
+    background: black;
+
+    .backdrop-img {
+      height: 337px;
+      width: 100%;
+      display: block;
+      filter: opacity(.2);
+
+    }
+  }
+
+  .col {
+    margin-top: 13px;
+    width: 100%;
+  }
+  .card-link {
+    position: relative;
+    left: 1.7rem;
+    bottom: 3rem;
+    border: 2px solid $color-teal;
+    text-align: center;
+    width: 12rem;
+    a {
+      color: #FFFFFF;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  }
+
+
+
+
+}

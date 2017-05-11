@@ -5,15 +5,24 @@
 .topic-parent {
   border-bottom: 1px solid black;
   .topic-section{
+    .plus-click {
+      font-size: .75rem;
+      &:hover {
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
       .topic {
         color: #2952a3;
-        &:hover {
-          text-decoration: underline;
-          cursor: pointer;
-        }
+        font-weight: bold;
+
       }
       .username {
         font-weight: bold;
+      }
+      .italic {
+        font-weight: bold;
+        font-style: italic;
       }
       .time {
         font-size: .75rem;
