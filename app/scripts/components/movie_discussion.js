@@ -39,12 +39,13 @@ class MovieDiscuss extends React.Component {
     return username;
   } //being worked on
 
-  submitTopic(e, topic, message) {
+  submitTopic(e, topic, message, rating) {
     e.preventDefault();
     let paramId = this.props.match.params.id;
     let currMov = this.currentMovie(paramId);
     let id = currMov.id;
     let user = "user";
+    console.log(topic, message, rating);
     // //change when ready to log in
     // let user = this.currentUser();
 
@@ -100,6 +101,8 @@ class MovieDiscuss extends React.Component {
                 <NewThread
                   closeModal={this.handleModal}
                   onSubmit={this.submitTopic}
+                  handleRating={this.handleRating}
+                  user={user}
                 />
               </div>
               <MovieTopic movieId={paramId} topics={topics} />

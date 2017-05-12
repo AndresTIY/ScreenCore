@@ -8,7 +8,6 @@ class Rate extends React.Component {
 
   render() {
     const ratingChanged = newRating => {
-      console.log(newRating);
       this.props.handleRating(newRating);
     };
     let starColor = "#ffd700";
