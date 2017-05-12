@@ -23,6 +23,7 @@ class MovieTopic extends React.Component {
                 <div className="topic-parent" key={topic.objectId}>
                   <TopicExpand
                     handleTopicExpand={this.handleTopicExpand}
+                    handleThreadVote={this.props.handleThreadVote}
                     topics={topic}
                     time={convert}
                     id={topic.objectId}

@@ -30,7 +30,7 @@ class TopicExpand extends React.Component {
       <div className="topic-section">
         <li>
           Rate This Review
-          <ThumbVote />
+          <ThumbVote handleThreadVote={this.props.handleThreadVote} />
           <span onClick={this.handleTopicExpand} className="plus-click">
             {clickChangeIcon}
           </span>

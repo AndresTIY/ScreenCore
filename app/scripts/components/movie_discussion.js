@@ -17,6 +17,7 @@ class MovieDiscuss extends React.Component {
     this.currentMovie = this.currentMovie.bind(this);
     this.handleRating = this.handleRating.bind(this);
     this.handleModal = this.handleModal.bind(this);
+    this.handleThreadVote = this.handleThreadVote.bind(this);
   }
 
   componentWillMount() {
@@ -66,6 +67,9 @@ class MovieDiscuss extends React.Component {
     this.setState({ isModalOpen: !this.state.isModalOpen });
     console.log(this.state.isModalOpen);
   }
+  handleThreadVote() {
+    console.log("handleThreadVote clicks!");
+  }
 
   render() {
     let movieList = this.props.movies;
@@ -107,7 +111,11 @@ class MovieDiscuss extends React.Component {
                   user={user}
                 />
               </div>
-              <MovieTopic movieId={paramId} topics={topics} />
+              <MovieTopic
+                handleThreadVote={this.handleThreadVote}
+                movieId={paramId}
+                topics={topics}
+              />
             </div>
           </div>
 

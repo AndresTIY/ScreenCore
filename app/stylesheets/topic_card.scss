@@ -34,5 +34,14 @@
 
 }
 .thumbs {
-  // display: inline;
+  * {
+    padding: .1rem;
+  }
+  .thread-rating {
+    font-weight: bold;
+  }
+  i:hover {
+    color: #2952a3;
+    cursor: pointer;
+  }
 }
