@@ -1,7 +1,7 @@
 import api from "../api.js";
 import loadTopics from "../actions/load_topics.js";
 
-export default function createTopic(user, topic, message, id) {
+export default function createTopic(user, topic, message, id, rating) {
   return function(dispatch) {
     $.ajax({
       url: api.url + "/data/discussion",
@@ -16,7 +16,8 @@ export default function createTopic(user, topic, message, id) {
         username: user,
         topic: topic,
         message: message,
-        movie_id: id
+        movie_id: id,
+        rating: rating
       })
     }).then((data, success, xhr) => {
       dispatch(loadTopics());
