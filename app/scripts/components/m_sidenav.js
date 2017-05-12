@@ -10,7 +10,7 @@ class MovieSideNav extends React.Component {
             <h5 className="header">Discuss It</h5>
             {this.props.movies.map((movie, i) => {
               return (
-                <li key={i}>
+                <li className="disc-links" key={i}>
                   <Link to={"/discussion/" + movie.id}>{movie.title}</Link>
                 </li>
               );
