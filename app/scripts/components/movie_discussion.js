@@ -51,6 +51,7 @@ class MovieDiscuss extends React.Component {
 
     this.props.dispatch(createTopic(user, topic, message, id, rating));
   }
+
   handleRating(rating) {
     let paramId = this.props.match.params.id;
     let currMov = this.currentMovie(paramId);
@@ -60,6 +61,7 @@ class MovieDiscuss extends React.Component {
     console.log(rating, id, user);
     this.props.dispatch(submitRating(rating, id, user));
   }
+
   handleModal() {
     this.setState({ isModalOpen: !this.state.isModalOpen });
     console.log(this.state.isModalOpen);
@@ -84,7 +86,7 @@ class MovieDiscuss extends React.Component {
           <MovieDiscussCard
             handleRating={this.handleRating}
             movie={currentMovie}
-            ratings={ratings}
+            ratings={topics}
             movieId={paramId}
             user={user}
           />

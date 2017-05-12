@@ -1,5 +1,6 @@
 import React from "react";
 import DetailedView from "./m_detailed_view.js";
+import ReactStars from "react-stars";
 
 class TopicExpand extends React.Component {
   constructor(props) {
@@ -34,6 +35,14 @@ class TopicExpand extends React.Component {
           {" "}
           <span className="time">posted on {this.props.time}</span>
           {" "}
+          <div>
+            <ReactStars
+              edit={false}
+              count={topics.rating}
+              size={10}
+              color1={"#ffd700"}
+            />
+          </div>
           <p>
             <span className="topic">
               {topics.topic}
