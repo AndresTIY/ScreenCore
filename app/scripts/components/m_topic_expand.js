@@ -1,6 +1,7 @@
 import React from "react";
 import DetailedView from "./m_detailed_view.js";
 import ReactStars from "react-stars";
+import ThumbVote from "./m_thumbs.js";
 
 class TopicExpand extends React.Component {
   constructor(props) {
@@ -28,6 +29,8 @@ class TopicExpand extends React.Component {
     return (
       <div className="topic-section">
         <li>
+          Rate This Review
+          <ThumbVote />
           <span onClick={this.handleTopicExpand} className="plus-click">
             {clickChangeIcon}
           </span>
@@ -49,6 +52,7 @@ class TopicExpand extends React.Component {
             </span>
           </p>
           {" "}
+
         </li>
         <li>
           <div className={classToggle}>
