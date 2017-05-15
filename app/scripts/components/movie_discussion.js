@@ -40,8 +40,7 @@ class MovieDiscuss extends React.Component {
     return username;
   } //being worked on
 
-  submitTopic(e, topic, message, rating) {
-    e.preventDefault();
+  submitTopic(topic, message, rating) {
     let paramId = this.props.match.params.id;
     let currMov = this.currentMovie(paramId);
     let id = currMov.id;

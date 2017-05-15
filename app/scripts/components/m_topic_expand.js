@@ -16,9 +16,11 @@ class TopicExpand extends React.Component {
       topicExpand: !this.state.topicExpand
     });
   }
+
   totalThreadVotes() {
     console.log(this.props.topics);
   }
+
   // handleThreadVote={this.props.handleThreadVote}
   render() {
     let topics = this.props.topics;
