@@ -81,7 +81,10 @@ class TopicExpand extends React.Component {
         <li>
           Rate This Review
           <ThumbVote
-            threadvotes={topics.thread_vote}
+            threadVotes={topics.thread_vote}
+            totalVotes={topics.thread_vote_count}
+            negVotes={topics.negative_vote_count}
+            posVotes={topics.positive_vote_count}
             handleVote={this.handleVote}
           />
           <span onClick={this.handleTopicExpand} className="plus-click">
