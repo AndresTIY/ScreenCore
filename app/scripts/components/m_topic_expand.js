@@ -22,13 +22,41 @@ class TopicExpand extends React.Component {
     console.log(this.props.topics);
   }
   handleVote(num) {
+    //if this.props.topics is empty, run newVote action
+    //if this.props.topics is !empty, run updateVote action
+    let voteCount = this.props.topics.thread_vote;
+    let objectId = this.props.topics.objectId;
+    let totalVotes = this.props.topics.thread_vote_count;
+    let negativeVotes = this.props.topics.negative_vote_count;
+    let positiveVotes = this.props.topics.positive_vote_count;
     if (num === 1) {
-      console.log("positive vote");
+      voteCount = voteCount + 1;
+      positiveVotes = positiveVotes + 1;
     }
     if (num === -1) {
-      console.log("negative vote");
+      voteCount = voteCount - 1;
+      negativeVotes = negativeVotes + 1;
     }
+    totalVotes = totalVotes + 1;
+    console.log(
+      objectId,
+      "voteCount:",
+      voteCount,
+      "neg:",
+      negativeVotes,
+      "pos",
+      positiveVotes,
+      "total",
+      totalVotes
+    );
   }
+  // this.props.dispatch(
+  //   update(objectId, voteCount, negativeVotes, positiveVotes, totalVotes)
+  // );
+  //negative_vote_count
+  //positive_vote_count
+  //thread_vote_count
+  //thread_vote
 
   // handleThreadVote={this.props.handleThreadVote}
   render() {
