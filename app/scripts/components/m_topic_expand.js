@@ -23,8 +23,6 @@ class TopicExpand extends React.Component {
     console.log(this.props.topics);
   }
   handleVote(num) {
-    //if this.props.topics is empty, run newVote action
-    //if this.props.topics is !empty, run updateVote action
     let voteCount = this.props.topics.thread_vote;
     let objectId = this.props.topics.objectId;
     let totalVotes = this.props.topics.thread_vote_count;
@@ -39,17 +37,7 @@ class TopicExpand extends React.Component {
       negVotes = negVotes + 1;
     }
     totalVotes = totalVotes + 1;
-    console.log(
-      objectId,
-      "voteCount:",
-      voteCount,
-      "neg:",
-      negVotes,
-      "pos",
-      posVotes,
-      "total",
-      totalVotes
-    );
+
     this.props.handleThreadVote(
       objectId,
       voteCount,
@@ -59,12 +47,6 @@ class TopicExpand extends React.Component {
     );
   }
 
-  //negative_vote_count
-  //positive_vote_count
-  //thread_vote_count
-  //thread_vote
-
-  // handleThreadVote={this.props.handleThreadVote}
   render() {
     let topics = this.props.topics;
     let classToggle = "hide";
