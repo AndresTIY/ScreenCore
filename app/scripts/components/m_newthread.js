@@ -19,7 +19,7 @@ class NewThread extends React.Component {
     let topic = this.refs.topic.value;
     let message = this.refs.message.value;
     let rating = this.refs.stars.state.value;
-    this.props.onSubmit(e, topic, message, rating);
+    this.props.onSubmit(topic, message, rating);
     this.clearText();
     this.props.closeModal();
   }

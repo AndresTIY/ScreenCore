@@ -16,25 +16,29 @@ class Login extends React.Component {
     let pw = this.refs.pw.value;
     this.props.dispatch(userLogin(email, pw, this.props.history));
   }
-
+  // login-card"
   render() {
     return (
       <div className="card login-card">
-        <div className="row">
-          <form onSubmit={this.loginUser}>
-            <div className="input-field col s6 m6 l6">
+
+        <form onSubmit={this.loginUser}>
+          <div className="row">
+            <div className="input-field col s12">
               <label htmlFor="email">Email</label>
               <input ref="email" type="text" value="user@example.com" />
             </div>
-            <div className="input-field col s6 m6 l6">
+          </div>
+          <div className="row">
+            <div className="input-field col s12">
               <label htmlFor="password">Password</label>
               <input ref="pw" type="password" value="password" />
             </div>
-            <div className="login-btn-div">
-              <button className="btn login-btn" type="submit">Submit</button>
-            </div>
-          </form>
-        </div>
+          </div>
+          <div className="login-btn-div">
+            <button className="btn login-btn" type="submit">Submit</button>
+          </div>
+        </form>
+
       </div>
     );
   }

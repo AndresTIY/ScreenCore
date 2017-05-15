@@ -8,6 +8,7 @@ class TopicExpand extends React.Component {
     super(props);
     this.state = { topicExpand: false };
     this.handleTopicExpand = this.handleTopicExpand.bind(this);
+    this.totalThreadVotes = this.totalThreadVotes.bind(this);
   }
 
   handleTopicExpand() {
@@ -15,6 +16,10 @@ class TopicExpand extends React.Component {
       topicExpand: !this.state.topicExpand
     });
   }
+  totalThreadVotes() {
+    console.log(this.props.topics);
+  }
+  // handleThreadVote={this.props.handleThreadVote}
   render() {
     let topics = this.props.topics;
     let classToggle = "hide";
@@ -30,7 +35,10 @@ class TopicExpand extends React.Component {
       <div className="topic-section">
         <li>
           Rate This Review
-          <ThumbVote handleThreadVote={this.props.handleThreadVote} />
+          <ThumbVote
+            threadvotes={topics.thread_vote}
+            handleThreadVote={this.totalThreadVotes}
+          />
           <span onClick={this.handleTopicExpand} className="plus-click">
             {clickChangeIcon}
           </span>
