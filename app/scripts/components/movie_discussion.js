@@ -8,6 +8,7 @@ import MovieSideNav from "./m_sidenav.js";
 import createTopic from "../actions/create_topic.js";
 import loadTopics from "../actions/load_topics.js";
 import submitRating from "../actions/submit_rating.js";
+import updateThreadVote from "../actions/update_thread_vote.js";
 
 class MovieDiscuss extends React.Component {
   constructor(props) {
@@ -66,8 +67,11 @@ class MovieDiscuss extends React.Component {
     this.setState({ isModalOpen: !this.state.isModalOpen });
     console.log(this.state.isModalOpen);
   }
-  handleThreadVote() {
-    console.log("handleThreadVote clicks!");
+
+  handleThreadVote(objectId, voteCount, negVotes, posVotes, totalVotes) {
+    this.props.dispatch(
+      updateThreadVote(objectId, voteCount, negVotes, posVotes, totalVotes)
+    );
   }
 
   render() {

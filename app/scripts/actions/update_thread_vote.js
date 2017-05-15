@@ -1,10 +1,11 @@
 import api from "../api.js";
+import loadTopics from "./load_topics.js";
 
 export default function updateThreadVote(
   objectId,
   voteCount,
-  negativeVotes,
-  positiveVotes,
+  negVotes,
+  posVotes,
   totalVotes
 ) {
   return function(dispatch) {
@@ -18,13 +19,13 @@ export default function updateThreadVote(
         "application-type": "REST"
       },
       data: JSON.stringify({
-        positive_vote_count: positiveVotes,
-        negative_vote_count: negativeVotes,
+        positive_vote_count: posVotes,
+        negative_vote_count: negVotes,
         thread_vote_count: totalVotes,
         thread_vote: voteCount
       })
-    }).then((data, success, xhr) => {
-      console.log(data);
+    }).then((topics, success, xhr) => {
+      dispatch(loadTopics());
     });
   };
 }

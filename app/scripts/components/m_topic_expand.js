@@ -2,6 +2,7 @@ import React from "react";
 import DetailedView from "./m_detailed_view.js";
 import ReactStars from "react-stars";
 import ThumbVote from "./m_thumbs.js";
+import updateThreadVote from "../actions/update_thread_vote.js";
 
 class TopicExpand extends React.Component {
   constructor(props) {
@@ -27,15 +28,15 @@ class TopicExpand extends React.Component {
     let voteCount = this.props.topics.thread_vote;
     let objectId = this.props.topics.objectId;
     let totalVotes = this.props.topics.thread_vote_count;
-    let negativeVotes = this.props.topics.negative_vote_count;
-    let positiveVotes = this.props.topics.positive_vote_count;
+    let negVotes = this.props.topics.negative_vote_count;
+    let posVotes = this.props.topics.positive_vote_count;
     if (num === 1) {
       voteCount = voteCount + 1;
-      positiveVotes = positiveVotes + 1;
+      posVotes = posVotes + 1;
     }
     if (num === -1) {
       voteCount = voteCount - 1;
-      negativeVotes = negativeVotes + 1;
+      negVotes = negVotes + 1;
     }
     totalVotes = totalVotes + 1;
     console.log(
@@ -43,16 +44,21 @@ class TopicExpand extends React.Component {
       "voteCount:",
       voteCount,
       "neg:",
-      negativeVotes,
+      negVotes,
       "pos",
-      positiveVotes,
+      posVotes,
       "total",
       totalVotes
     );
+    this.props.handleThreadVote(
+      objectId,
+      voteCount,
+      negVotes,
+      posVotes,
+      totalVotes
+    );
   }
-  // this.props.dispatch(
-  //   update(objectId, voteCount, negativeVotes, positiveVotes, totalVotes)
-  // );
+
   //negative_vote_count
   //positive_vote_count
   //thread_vote_count
