@@ -5,10 +5,16 @@ class ThumbVote extends React.Component {
     let threadValue = this.props.threadvotes;
     return (
       <div className="thumbs">
-        <i className="tiny material-icons">
+        <i
+          onClick={() => this.props.handleVote(1)}
+          className="tiny material-icons"
+        >
           thumb_up{" "}
         </i>
-        <i className="tiny material-icons">
+        <i
+          onClick={() => this.props.handleVote(-1)}
+          className="tiny material-icons"
+        >
           thumb_down{" "}
         </i>
         <span className="thread-rating">
