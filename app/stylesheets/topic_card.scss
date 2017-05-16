@@ -33,20 +33,27 @@
     }
 
 }
-.thumbs {
-  .thumb {
-    display: block;
-    width: 3rem;
+.thumb-vote{
+  .thumbs {
+    .thumb {
+      display: block;
+      width: 2rem;
 
-  }
-  * {
-    padding: .1rem;
-  }
-  .thread-rating {
-    font-weight: bold;
-  }
-  i:hover {
-    color: #2952a3;
-    cursor: pointer;
+    }
+    * {
+      padding: .1rem;
+    }
+    .thread-rating {
+      font-weight: bold;
+    }
+    .disable-hover:hover {
+      color: black;
+      cursor: default;
+    }
+    i:hover {
+      color: #2952a3;
+      cursor: pointer;
+    }
+
   }
 }

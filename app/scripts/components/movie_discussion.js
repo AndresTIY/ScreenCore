@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import container from "../containers/all.js";
 import MovieDiscussCard from "./m_card.js";
 import MovieTopic from "./m_topic.js";
@@ -106,7 +107,15 @@ class MovieDiscuss extends React.Component {
             <div className="col s9">
               <h3 className="center">Discuss {currentMovie.title}!</h3>
               <p className={"center " + showMsg}>
-                Please login or register to add your review!
+                Please
+                {" "}
+                <Link to="/login">login</Link>
+                {" "}
+                or
+                {" "}
+                <Link to="/register">register</Link>
+                {" "}
+                to add your review and rate user reviews!
               </p>
 
               <button
@@ -126,6 +135,7 @@ class MovieDiscuss extends React.Component {
                 />
               </div>
               <MovieTopic
+                user={user}
                 handleThreadVote={this.handleThreadVote}
                 movieId={paramId}
                 topics={topics}

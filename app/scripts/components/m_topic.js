@@ -11,6 +11,7 @@ class MovieTopic extends React.Component {
 
   render() {
     let topics = this.props.topics;
+    let user = this.props.user;
     let movieId = Number(this.props.movieId);
     let sortedByVote = _.orderBy(topics, ["thread_vote"], ["desc", "asc"]);
 
@@ -24,6 +25,7 @@ class MovieTopic extends React.Component {
               return (
                 <div className="topic-parent" key={topic.objectId}>
                   <TopicExpand
+                    user={user}
                     handleTopicExpand={this.handleTopicExpand}
                     handleThreadVote={this.props.handleThreadVote}
                     topics={topic}
