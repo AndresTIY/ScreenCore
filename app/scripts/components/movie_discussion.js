@@ -39,17 +39,13 @@ class MovieDiscuss extends React.Component {
     let user = this.props.userInfo;
     let username = user.username;
     return username;
-  } //being worked on
+  }
 
   submitTopic(topic, message, rating) {
     let paramId = this.props.match.params.id;
     let currMov = this.currentMovie(paramId);
     let id = currMov.id;
-    let user = "user";
-    console.log(topic, message, rating);
-    // //change when ready to log in
-    // let user = this.currentUser();
-
+    let user = this.currentUser();
     this.props.dispatch(createTopic(user, topic, message, id, rating));
   }
 
@@ -57,9 +53,8 @@ class MovieDiscuss extends React.Component {
     let paramId = this.props.match.params.id;
     let currMov = this.currentMovie(paramId);
     let id = currMov.id;
-    // let user = this.currentUser();
-    let user = "user";
-    console.log(rating, id, user);
+    let user = this.currentUser();
+
     this.props.dispatch(submitRating(rating, id, user));
   }
 
