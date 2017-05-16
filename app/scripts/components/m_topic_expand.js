@@ -28,13 +28,17 @@ class TopicExpand extends React.Component {
     let totalVotes = this.props.topics.thread_vote_count;
     let negVotes = this.props.topics.negative_vote_count;
     let posVotes = this.props.topics.positive_vote_count;
+    let thumbsUp;
+    let thumbsDown;
     if (num === 1) {
       voteCount = voteCount + 1;
       posVotes = posVotes + 1;
+      thumbsUp = true;
     }
     if (num === -1) {
       voteCount = voteCount - 1;
       negVotes = negVotes + 1;
+      thumbsDown = true;
     }
     totalVotes = totalVotes + 1;
 
@@ -43,7 +47,9 @@ class TopicExpand extends React.Component {
       voteCount,
       negVotes,
       posVotes,
-      totalVotes
+      totalVotes,
+      thumbsUp,
+      thumbsDown
     );
   }
 

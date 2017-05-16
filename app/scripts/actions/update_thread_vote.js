@@ -1,7 +1,8 @@
 import api from "../api.js";
-import loadTopics from "./load_topics.js";
+import submitVote from "./submit_vote.js";
 
 export default function updateThreadVote(
+  user,
   objectId,
   voteCount,
   negVotes,
@@ -24,8 +25,6 @@ export default function updateThreadVote(
         thread_vote_count: totalVotes,
         thread_vote: voteCount
       })
-    }).then((topics, success, xhr) => {
-      dispatch(loadTopics());
     });
   };
 }

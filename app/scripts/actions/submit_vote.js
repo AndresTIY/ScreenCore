@@ -1,9 +1,10 @@
 import api from "../api.js";
+import loadTopics from "./load_topics.js";
 
-export default function submitRating(rating, id, user) {
+export default function submitVote(user, objectId, thumbsUp, thumbsDown) {
   return function(dispatch) {
     $.ajax({
-      url: api.url + "/data/ratings",
+      url: `${api.url}/data/review_vote`,
       method: "POST",
       headers: {
         "application-id": api.appId,
@@ -12,12 +13,14 @@ export default function submitRating(rating, id, user) {
         "application-type": "REST"
       },
       data: JSON.stringify({
-        rating: rating,
-        movie_id: id,
-        user: user
+        user: user,
+        reviewId: objectId,
+        posVote: thumbsUp,
+        negVote: thumbsDown,
+        hasVoted: true
       })
     }).then((data, success, xhr) => {
-      console.log(data);
+      dispatch(loadTopics());
     });
   };
 }

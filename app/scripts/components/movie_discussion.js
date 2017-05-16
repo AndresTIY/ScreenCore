@@ -8,8 +8,9 @@ import NewThread from "./m_newthread.js";
 import MovieSideNav from "./m_sidenav.js";
 import createReview from "../actions/create_review.js";
 import loadTopics from "../actions/load_topics.js";
-import submitRating from "../actions/submit_rating.js";
+// import submitRating from "../actions/submit_rating.js";
 import updateThreadVote from "../actions/update_thread_vote.js";
+import submitVote from "../actions/submit_vote.js";
 
 class MovieDiscuss extends React.Component {
   constructor(props) {
@@ -56,17 +57,36 @@ class MovieDiscuss extends React.Component {
     let id = currMov.id;
     let user = this.currentUser();
     this.props.dispatch(submitRating(rating, id, user));
-  }
+  } //does nothing right now
 
   handleModal() {
     this.setState({ isModalOpen: !this.state.isModalOpen });
     console.log(this.state.isModalOpen);
   }
 
-  handleThreadVote(objectId, voteCount, negVotes, posVotes, totalVotes) {
+  handleThreadVote(
+    objectId,
+    voteCount,
+    negVotes,
+    posVotes,
+    totalVotes,
+    thumbsUp,
+    thumbsDown
+  ) {
+    let user = this.currentUser();
+
     this.props.dispatch(
-      updateThreadVote(objectId, voteCount, negVotes, posVotes, totalVotes)
+      updateThreadVote(
+        user,
+        objectId,
+        voteCount,
+        negVotes,
+        posVotes,
+        totalVotes
+      )
     );
+
+    this.props.dispatch(submitVote(user, objectId, thumbsUp, thumbsDown));
   }
 
   render() {
