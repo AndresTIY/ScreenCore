@@ -11,13 +11,14 @@ class ThumbVote extends React.Component {
       <div className="thumbs">
         <i
           onClick={() => this.props.handleVote(1)}
-          className="tiny material-icons"
+          className="thumb small material-icons"
         >
           thumb_up{" "}
         </i>
+        Rate
         <i
           onClick={() => this.props.handleVote(-1)}
-          className="tiny material-icons"
+          className="thumb small material-icons"
         >
           thumb_down{" "}
         </i>

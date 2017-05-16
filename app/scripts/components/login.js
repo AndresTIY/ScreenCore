@@ -25,13 +25,13 @@ class Login extends React.Component {
           <div className="row">
             <div className="input-field col s12">
               <label htmlFor="email">Email</label>
-              <input ref="email" type="text" value="user@example.com" />
+              <input ref="email" type="text" />
             </div>
           </div>
           <div className="row">
             <div className="input-field col s12">
               <label htmlFor="password">Password</label>
-              <input ref="pw" type="password" value="password" />
+              <input ref="pw" type="password" />
             </div>
           </div>
           <div className="login-btn-div">
@@ -43,5 +43,5 @@ class Login extends React.Component {
     );
   }
 }
-// export default Login;
+
 export default connect(container.allState)(Login);

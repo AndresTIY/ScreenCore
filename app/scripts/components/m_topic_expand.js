@@ -61,7 +61,7 @@ class TopicExpand extends React.Component {
     return (
       <div className="topic-section">
         <li>
-          Rate This Review
+
           <ThumbVote
             threadVotes={topics.thread_vote}
             totalVotes={topics.thread_vote_count}
@@ -80,8 +80,8 @@ class TopicExpand extends React.Component {
             <ReactStars
               edit={false}
               count={topics.rating}
-              size={10}
-              color1={"#ffd700"}
+              half={true}
+              size={20}
             />
           </div>
           <p>

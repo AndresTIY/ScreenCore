@@ -53,5 +53,5 @@ class MovieDiscussCard extends React.Component {
       </div>
     );
   }
-} // end of class
+}
 export default MovieDiscussCard;

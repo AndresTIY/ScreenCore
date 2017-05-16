@@ -36,5 +36,5 @@ class Rate extends React.Component {
       </div>
     );
   }
-} //end of rate
+}
 export default Rate;

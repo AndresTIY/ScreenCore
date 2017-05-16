@@ -34,6 +34,11 @@
 
 }
 .thumbs {
+  .thumb {
+    display: block;
+    width: 3rem;
+
+  }
   * {
     padding: .1rem;
   }
