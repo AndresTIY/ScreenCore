@@ -17,7 +17,11 @@ export default function createTopic(user, topic, message, id, rating) {
         topic: topic,
         message: message,
         movie_id: id,
-        rating: rating
+        rating: rating,
+        positive_vote_count: 0,
+        negative_vote_count: 0,
+        thread_vote_count: 0,
+        thread_vote: 0
       })
     }).then((data, success, xhr) => {
       dispatch(loadTopics());
