@@ -39,10 +39,12 @@ class MovieDiscussCard extends React.Component {
                   movieId={this.props.movieId}
                   ratings={this.props.ratings}
                 />
-                <Rate
-                  user={this.props.user}
-                  handleRating={this.props.handleRating}
-                />
+                {
+                  //   <Rate
+                  //   user={this.props.user}
+                  //   handleRating={this.props.handleRating}
+                  // />
+                }
                 <p className="descrip">{movie.overview}</p>
               </div>
 
@@ -55,3 +57,4 @@ class MovieDiscussCard extends React.Component {
   }
 }
 export default MovieDiscussCard;
+//Rate component commented out since ratings table was deleted

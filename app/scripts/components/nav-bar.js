@@ -15,7 +15,8 @@ class NavBar extends React.Component {
   }
   componentDidMount() {
     this.props.dispatch(loadMovies());
-    this.props.dispatch(loadRatings());
+    // this.props.dispatch(loadRatings());
+    //ratings table no longer exists
   }
   logoutUser(e) {
     e.preventDefault();

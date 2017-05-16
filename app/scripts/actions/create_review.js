@@ -1,7 +1,7 @@
 import api from "../api.js";
 import loadTopics from "../actions/load_topics.js";
 
-export default function createTopic(user, topic, message, id, rating) {
+export default function createReview(user, topic, message, id, rating) {
   return function(dispatch) {
     $.ajax({
       url: api.url + "/data/discussion",

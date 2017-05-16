@@ -6,7 +6,7 @@ import MovieDiscussCard from "./m_card.js";
 import MovieTopic from "./m_topic.js";
 import NewThread from "./m_newthread.js";
 import MovieSideNav from "./m_sidenav.js";
-import createTopic from "../actions/create_topic.js";
+import createReview from "../actions/create_review.js";
 import loadTopics from "../actions/load_topics.js";
 import submitRating from "../actions/submit_rating.js";
 import updateThreadVote from "../actions/update_thread_vote.js";
@@ -47,7 +47,7 @@ class MovieDiscuss extends React.Component {
     let currMov = this.currentMovie(paramId);
     let id = currMov.id;
     let user = this.currentUser();
-    this.props.dispatch(createTopic(user, topic, message, id, rating));
+    this.props.dispatch(createReview(user, topic, message, id, rating));
   }
 
   handleRating(rating) {
