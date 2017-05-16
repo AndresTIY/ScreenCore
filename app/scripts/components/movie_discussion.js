@@ -54,7 +54,6 @@ class MovieDiscuss extends React.Component {
     let currMov = this.currentMovie(paramId);
     let id = currMov.id;
     let user = this.currentUser();
-
     this.props.dispatch(submitRating(rating, id, user));
   }
 
@@ -78,10 +77,18 @@ class MovieDiscuss extends React.Component {
     let currentMovie = this.currentMovie(paramId);
 
     if (movieList !== null) {
-      let hideClass = "hide";
+      let newThread = "hide";
+      let reviewBtn = "hide";
+      let showMsg = "show";
+      let disabledBtn = true;
+      if (user !== null) {
+        reviewBtn = "btn review-btn";
+        showMsg = "hide";
+        disabledBtn = false;
+      }
 
       if (this.state.isModalOpen) {
-        hideClass = "show";
+        newThread = "show";
       }
       return (
         <div>
@@ -98,10 +105,19 @@ class MovieDiscuss extends React.Component {
             </div>
             <div className="col s9">
               <h3 className="center">Discuss {currentMovie.title}!</h3>
-              <button onClick={this.handleModal} className="btn review-btn">
+              <p className={"center " + showMsg}>
+                Please login or register to add your review!
+              </p>
+
+              <button
+                onClick={this.handleModal}
+                disabled={disabledBtn}
+                className="btn review-btn"
+              >
                 Write a Review
               </button>
-              <div className={hideClass}>
+
+              <div className={newThread}>
                 <NewThread
                   closeModal={this.handleModal}
                   onSubmit={this.submitTopic}
