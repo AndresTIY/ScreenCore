@@ -28,9 +28,13 @@ class ThumbVote extends React.Component {
       disableThumbs = "thumbs";
       activeThumbs = "hide";
     }
+    if (threadValue > 0) {
+      threadValue = "+" + threadValue;
+    }
 
     return (
       <div className="thumb-vote">
+
         <div className={disableThumbs}>
           <i
             onClick={() => this.props.handleVote(1)}
@@ -45,10 +49,26 @@ class ThumbVote extends React.Component {
           >
             thumb_down{" "}
           </i>
-          Thread Rating: <span className="thread-rating"> {threadValue} </span>
-          Total Votes: <span className="thread-rating"> {totalVotes} </span>
-          Positive Votes: <span className="thread-rating"> {negVotes} </span>
-          Negative Votes: <span className="thread-rating"> {posVotes} </span>
+          Review Rating: <span className="thread-rating"> {threadValue} </span>
+          Out of
+          {" "}
+          <span className="thread-rating"> {totalVotes} </span>
+          {" "}
+          total votes
+          <i className="tiny-thumb disable-hover tiny material-icons">
+            thumb_up
+          </i>
+          {" "}
+          :
+          {" "}
+          <span className="thread-rating"> {negVotes} </span>
+          <i className="tiny-thumb disable-hover tiny material-icons">
+            thumb_down
+          </i>
+          {" "}
+          :
+          {" "}
+          <span className="thread-rating"> {posVotes} </span>
         </div>
 
         <div className={activeThumbs}>
@@ -59,10 +79,26 @@ class ThumbVote extends React.Component {
           <i className="disable-hover thumb small material-icons">
             thumb_down{" "}
           </i>
-          Thread Rating: <span className="thread-rating"> {threadValue} </span>
-          Total Votes: <span className="thread-rating"> {totalVotes} </span>
-          Positive Votes: <span className="thread-rating"> {negVotes} </span>
-          Negative Votes: <span className="thread-rating"> {posVotes} </span>
+          Review Rating: <span className="thread-rating"> {threadValue} </span>
+          Out of
+          {" "}
+          <span className="thread-rating"> {totalVotes} </span>
+          {" "}
+          total votes
+          <i className="tiny-thumb disable-hover tiny material-icons">
+            thumb_up
+          </i>
+          {" "}
+          :
+          {" "}
+          <span className="thread-rating"> {negVotes} </span>
+          <i className="tiny-thumb disable-hover tiny material-icons">
+            thumb_down
+          </i>
+          {" "}
+          :
+          {" "}
+          <span className="thread-rating"> {posVotes} </span>
         </div>
 
       </div>
