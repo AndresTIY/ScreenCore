@@ -61,17 +61,18 @@ class ThumbVote extends React.Component {
           {" "}
           :
           {" "}
-          <span className="thread-rating"> {negVotes} </span>
+          <span className="thread-rating"> {posVotes} </span>
           <i className="tiny-thumb disable-hover tiny material-icons">
             thumb_down
           </i>
           {" "}
           :
           {" "}
-          <span className="thread-rating"> {posVotes} </span>
+          <span className="thread-rating"> {negVotes} </span>
         </div>
 
         <div className={activeThumbs}>
+
           <i className="disable-hover thumb small material-icons">
             thumb_up{" "}
           </i>
@@ -91,14 +92,14 @@ class ThumbVote extends React.Component {
           {" "}
           :
           {" "}
-          <span className="thread-rating"> {negVotes} </span>
+          <span className="thread-rating"> {posVotes} </span>
           <i className="tiny-thumb disable-hover tiny material-icons">
             thumb_down
           </i>
           {" "}
           :
           {" "}
-          <span className="thread-rating"> {posVotes} </span>
+          <span className="thread-rating"> {negVotes} </span>
         </div>
 
       </div>

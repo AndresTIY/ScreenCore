@@ -90,12 +90,7 @@ class TopicExpand extends React.Component {
           <span className="time">posted on {this.props.time}</span>
           {" "}
           <div>
-            <ReactStars
-              edit={false}
-              count={topics.rating}
-              half={true}
-              size={20}
-            />
+            User Review: {topics.rating} out of 5
           </div>
           <p>
             <span className="topic">
