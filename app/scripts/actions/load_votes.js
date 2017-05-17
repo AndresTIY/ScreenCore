@@ -1,8 +1,8 @@
 import api from "../api.js";
-export default function loadRatings() {
+export default function loadVotes() {
   return function(dispatch) {
     $.ajax({
-      url: `${api.url}/data/ratings`,
+      url: `${api.url}/data/review_vote`,
       method: "GET",
       dataType: "JSON",
       headers: {
@@ -12,7 +12,7 @@ export default function loadRatings() {
         "application-type": "REST"
       }
     }).then(function(data, success, xhr) {
-      dispatch({ type: "LOAD_RATINGS", data: data.data });
+      dispatch({ type: "LOAD_VOTES", data: data.data });
     });
   };
 }

@@ -7,8 +7,6 @@ import MovieTopic from "./m_topic.js";
 import NewThread from "./m_newthread.js";
 import MovieSideNav from "./m_sidenav.js";
 import createReview from "../actions/create_review.js";
-import loadTopics from "../actions/load_topics.js";
-// import submitRating from "../actions/submit_rating.js";
 import updateThreadVote from "../actions/update_thread_vote.js";
 import submitVote from "../actions/submit_vote.js";
 
@@ -21,10 +19,6 @@ class MovieDiscuss extends React.Component {
     this.handleRating = this.handleRating.bind(this);
     this.handleModal = this.handleModal.bind(this);
     this.handleThreadVote = this.handleThreadVote.bind(this);
-  }
-
-  componentWillMount() {
-    this.props.dispatch(loadTopics());
   }
 
   currentMovie(paramsId) {
@@ -95,6 +89,7 @@ class MovieDiscuss extends React.Component {
     let ratings = this.props.ratingInfo;
     let paramId = this.props.match.params.id;
     let user = this.props.userInfo;
+    let userVotes = this.props.userVotes;
     let currentMovie = this.currentMovie(paramId);
 
     if (movieList !== null) {
@@ -159,6 +154,7 @@ class MovieDiscuss extends React.Component {
                 handleThreadVote={this.handleThreadVote}
                 movieId={paramId}
                 topics={topics}
+                userVotes={userVotes}
               />
             </div>
           </div>

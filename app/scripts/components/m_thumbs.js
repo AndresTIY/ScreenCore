@@ -1,12 +1,27 @@
 import React from "react";
 
 class ThumbVote extends React.Component {
+  filterUserVotes() {
+    let objectId = this.props.objectId;
+    let user = this.props.user;
+
+    this.props.userVotes.forEach((data, i) => {
+      if (data["reviewId"] === objectId && data["user"] === user.username) {
+        console.log(objectId);
+      }
+    });
+  }
+
+  // componentDidMount() {
+  //   this.filterUserVotes();
+  // }
   render() {
     let threadValue = this.props.threadVotes;
     let totalVotes = this.props.totalVotes;
     let negVotes = this.props.negVotes;
     let posVotes = this.props.posVotes;
     let user = this.props.user;
+    let userVotes = this.props.userVotes;
     let disableThumbs = "hide";
     let activeThumbs = "thumbs";
     if (user !== null) {
@@ -49,6 +64,7 @@ class ThumbVote extends React.Component {
           Positive Votes: <span className="thread-rating"> {negVotes} </span>
           Negative Votes: <span className="thread-rating"> {posVotes} </span>
         </div>
+
       </div>
     );
   }

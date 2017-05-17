@@ -4,7 +4,8 @@ export default function AppReducer(state, action) {
       movies: null,
       userInfo: null,
       topics: null,
-      ratingInfo: null
+      ratingInfo: null,
+      userVotes: null
     };
   }
 
@@ -31,9 +32,9 @@ export default function AppReducer(state, action) {
         userInfo: null
       });
 
-    case "LOAD_RATINGS":
+    case "LOAD_VOTES":
       return Object.assign({}, state, {
-        ratingInfo: action.data
+        userVotes: action.data
       });
     // case "CREATE_TOPIC":
     // case "ADD_COMMENT":

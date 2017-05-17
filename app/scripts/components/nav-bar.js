@@ -5,8 +5,9 @@ import NavOgLeft from "./nav_og_left.js";
 import NavUser from "./nav_user.js";
 import container from "../containers/all.js";
 import loadMovies from "../actions/load_movies.js";
-import loadRatings from "../actions/load_ratings.js";
+import loadVotes from "../actions/load_votes.js";
 import userLogout from "../actions/logout_action.js";
+import loadTopics from "../actions/load_topics.js";
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -15,8 +16,8 @@ class NavBar extends React.Component {
   }
   componentDidMount() {
     this.props.dispatch(loadMovies());
-    // this.props.dispatch(loadRatings());
-    //ratings table no longer exists
+    this.props.dispatch(loadVotes());
+    this.props.dispatch(loadTopics());
   }
   logoutUser(e) {
     e.preventDefault();

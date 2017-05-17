@@ -56,6 +56,9 @@ class TopicExpand extends React.Component {
   render() {
     let user = this.props.user;
     let topics = this.props.topics;
+    let userVotes = this.props.userVotes;
+    let objectId = this.props.topics.objectId;
+
     let classToggle = "hide";
     let clickChangeIcon = "[ + ]";
     let userStyle = "username";
@@ -71,11 +74,13 @@ class TopicExpand extends React.Component {
 
           <ThumbVote
             user={user}
+            userVotes={userVotes}
             threadVotes={topics.thread_vote}
             totalVotes={topics.thread_vote_count}
             negVotes={topics.negative_vote_count}
             posVotes={topics.positive_vote_count}
             handleVote={this.handleVote}
+            objectId={objectId}
           />
           <span onClick={this.handleTopicExpand} className="plus-click">
             {clickChangeIcon}

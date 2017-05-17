@@ -12,6 +12,7 @@ class MovieTopic extends React.Component {
   render() {
     let topics = this.props.topics;
     let user = this.props.user;
+    let userVotes = this.props.userVotes;
     let movieId = Number(this.props.movieId);
     let sortedByVote = _.orderBy(topics, ["thread_vote"], ["desc", "asc"]);
 
@@ -31,6 +32,7 @@ class MovieTopic extends React.Component {
                     topics={topic}
                     time={convert}
                     id={topic.objectId}
+                    userVotes={userVotes}
                   />
                 </div>
               );

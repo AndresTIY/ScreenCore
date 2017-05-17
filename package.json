@@ -32,8 +32,12 @@
     "test:watch": "npm test -- --watch"
   },
   "dependencies": {
+    "chart.js": "^1.1.1",
     "jquery": "^3.2.1",
     "materialize": "^1.0.0",
+    "react": "^15.5.4",
+    "react-chartjs": "^0.8.0",
+    "react-dom": "^15.5.4",
     "react-star-ratings": "^1.0.20",
     "react-stars": "^2.1.0",
     "redux": "^3.6.0"
