@@ -27,10 +27,7 @@ class FeaturedMovie extends React.Component {
             <div className="card medium horizontal">
               <div className="card-image s2 m6">
                 <Link to={"/discussion/" + mostPopular.id}>
-                  <img
-                    className="act-card-img"
-                    src={urlPath + mostPopular.poster_path}
-                  />
+                  <img src={urlPath + mostPopular.poster_path} />
                 </Link>
 
               </div>

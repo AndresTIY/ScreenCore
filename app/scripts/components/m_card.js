@@ -25,26 +25,22 @@ class MovieDiscussCard extends React.Component {
 
         <div className="col s12 m12 l12">
           <div className="card small horizontal">
-            <div className="card-image">
+            <div className="card-image s2 m6">
               <img src={urlPath + movie.poster_path} />
             </div>
             <div className="card-stacked">
-              <div className="card-content ">
+              <div className="card-content">
                 <h4 className="movie-title">{movie.title.toUpperCase()}</h4>
                 <p className="release-date">
                   RELEASE DATE: {moment(movie.release_date).format("M/DD/YYYY")}
                 </p>
+
                 <RatingView voteavg={movie.vote_average} />
                 <UserRatingView
                   movieId={this.props.movieId}
                   ratings={this.props.ratings}
                 />
-                {
-                  //   <Rate
-                  //   user={this.props.user}
-                  //   handleRating={this.props.handleRating}
-                  // />
-                }
+
                 <p className="descrip">{movie.overview}</p>
               </div>
 
