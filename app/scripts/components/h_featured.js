@@ -1,6 +1,5 @@
 import React from "react";
 import _ from "lodash";
-
 import { Link } from "react-router-dom";
 
 const urlPath = "https://image.tmdb.org/t/p/w500/";
@@ -19,19 +18,19 @@ class FeaturedMovie extends React.Component {
       return (
         <div className="row featured-card">
           <div className="featured-backdrop">
-
             <img
               className="backdrop-img"
               src={`${urlBack}${mostPopular.backdrop_path}`}
             />
-
           </div>
-          <div className="col s12 m8 l8">
+          <div className="col s12 m12 l8">
             <div className="card medium horizontal">
-
-              <div className="card-image">
+              <div className="card-image s2 m6">
                 <Link to={"/discussion/" + mostPopular.id}>
-                  <img src={urlPath + mostPopular.poster_path} />
+                  <img
+                    className="act-card-img"
+                    src={urlPath + mostPopular.poster_path}
+                  />
                 </Link>
 
               </div>
