@@ -18,7 +18,9 @@ class NavBar extends React.Component {
     this.props.dispatch(loadMovies());
     this.props.dispatch(loadVotes());
     this.props.dispatch(loadTopics());
+    window.scrollTo(0, 0);
   }
+
   logoutUser(e) {
     e.preventDefault();
     let token = this.props.userInfo["user-token"];
