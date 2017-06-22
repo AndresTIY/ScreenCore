@@ -1,11 +1,12 @@
 export default {
   mdbUrl: "https://api.themoviedb.org/3/",
-  dateRange: "discover/movie?page=1&primary_release_date.gte=2017-03-17&primary_release_date.lte=2017-05-30",
+  dateRange: `discover/movie?page=1&primary_release_date.gte=2017-05-15&primary_release_date.lte=2017-07-15&include_adult=false`,
   mdbApiKey: "&api_key=a3d838603389933e2f10a2af57c60317",
   url: "https://api.backendless.com/v1",
   appId: "892747C4-CCC9-E96F-FF91-006B50E61400",
   restKey: "30D82F23-700A-52A1-FF7B-1BC275C5F700"
 };
+
 //
 // <video
 //   tabindex="-1"
