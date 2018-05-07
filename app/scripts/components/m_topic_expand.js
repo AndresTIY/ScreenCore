@@ -64,8 +64,6 @@ class TopicExpand extends React.Component {
     let clickChangeIcon = "[ + ]";
     let userStyle = "username";
 
-    console.log("TOPCS", topics)
-
     if (this.state.topicExpand) {
       classToggle = "show";
       clickChangeIcon = "[ - ]";
