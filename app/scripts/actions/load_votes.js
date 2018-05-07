@@ -6,8 +6,8 @@ export default function loadVotes() {
       method: "GET",
       dataType: "JSON",
       headers: {
-        "application-id": api.appId,
-        "secret-key": api.restKey,
+        // "application-id": api.appId,
+        // "secret-key": api.restKey,
         "Content-Type": "application/json",
         "application-type": "REST"
       }

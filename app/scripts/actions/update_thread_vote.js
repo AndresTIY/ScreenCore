@@ -14,8 +14,8 @@ export default function updateThreadVote(
       url: `${api.url}/data/discussion/${objectId}`,
       method: "PUT",
       headers: {
-        "application-id": api.appId,
-        "secret-key": api.restKey,
+        // "application-id": api.appId,
+        // "secret-key": api.restKey,
         "Content-Type": "application/json",
         "application-type": "REST"
       },

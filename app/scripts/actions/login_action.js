@@ -7,8 +7,8 @@ export default function userLogin(email, pw, history) {
       method: "POST",
       contentType: "application/json",
       headers: {
-        "application-id": api.appId,
-        "secret-key": api.restKey,
+        // "application-id": api.appId,
+        // "secret-key": api.restKey,
         "Content-Type": "application/json",
         "application-type": "REST"
       },

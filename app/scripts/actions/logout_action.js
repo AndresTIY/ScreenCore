@@ -7,8 +7,8 @@ export default function userLogout(token, history) {
       method: "GET",
       contentType: "application/json",
       headers: {
-        "application-id": api.appId,
-        "secret-key": api.restKey,
+        // "application-id": api.appId,
+        // "secret-key": api.restKey,
         "user-token": token,
         "application-type": "REST"
       }

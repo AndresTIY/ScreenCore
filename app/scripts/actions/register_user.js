@@ -7,8 +7,8 @@ export default function registerUser(name, username, email, pw, history) {
       url: api.url + "/data/Users",
       method: "POST",
       headers: {
-        "application-id": api.appId,
-        "secret-key": api.restKey,
+        // "application-id": api.appId,
+        // "secret-key": api.restKey,
         "Content-Type": "application/json",
         "application-type": "REST"
       },
@@ -23,3 +23,6 @@ export default function registerUser(name, username, email, pw, history) {
     });
   };
 }
+
+
+// /application-id/REST-api-key/users/register

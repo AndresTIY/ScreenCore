@@ -7,8 +7,8 @@ export default function submitVote(user, objectId, thumbsUp, thumbsDown) {
       url: `${api.url}/data/review_vote`,
       method: "POST",
       headers: {
-        "application-id": api.appId,
-        "secret-key": api.restKey,
+        // "application-id": api.appId,
+        // "secret-key": api.restKey,
         "Content-Type": "application/json",
         "application-type": "REST"
       },
