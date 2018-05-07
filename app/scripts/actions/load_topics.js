@@ -6,13 +6,11 @@ export default function loadTopics() {
       method: "GET",
       dataType: "JSON",
       headers: {
-        // "application-id": api.appId,
-        // "secret-key": api.restKey,
         "Content-Type": "application/json",
         "application-type": "REST"
       }
     }).then(function(topics, success, xhr) {
-      dispatch({ type: "LOAD_TOPICS", topics: topics.data });
+      dispatch({ type: "LOAD_TOPICS", topics: topics });
     });
   };
 }

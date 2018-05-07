@@ -11,7 +11,7 @@ class UserRatingView extends React.Component {
     let ratings = this.props.ratings;
     let id = this.props.movieId;
 
-    if (ratings === null || id === null) {
+    if (ratings === null || id === null || ratings === undefined) {
       return;
     }
 
@@ -30,10 +30,6 @@ class UserRatingView extends React.Component {
     console.log(decFixed);
     return decFixed * 2;
   }
-
-  // componentWillMount() {
-  //   return this.filterAndAvg();
-  // }
 
   render() {
     return (

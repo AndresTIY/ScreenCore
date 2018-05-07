@@ -6,8 +6,6 @@ export default function submitRating(rating, id, user) {
       url: api.url + "/data/ratings",
       method: "POST",
       headers: {
-        // "application-id": api.appId,
-        // "secret-key": api.restKey,
         "Content-Type": "application/json",
         "application-type": "REST"
       },

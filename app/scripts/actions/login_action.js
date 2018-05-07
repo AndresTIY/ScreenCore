@@ -7,8 +7,6 @@ export default function userLogin(email, pw, history) {
       method: "POST",
       contentType: "application/json",
       headers: {
-        // "application-id": api.appId,
-        // "secret-key": api.restKey,
         "Content-Type": "application/json",
         "application-type": "REST"
       },
@@ -22,5 +20,3 @@ export default function userLogin(email, pw, history) {
     });
   };
 }
-
-// https://api.backendless.com/C2927B9F-EF65-363C-FFFB-877EF1FDFC00/BADA0FE2-2067-6222-FF59-28ED062B5300/data/Users
